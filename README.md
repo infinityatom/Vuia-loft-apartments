@@ -35,7 +35,7 @@ firebase deploy
 
 ## Tech Stack
 
-- **Client:** React, Redux, Vite
+- **Client:** React, Vite
 
 - **Server:** Firebase (hosting and server functions)
 
@@ -44,6 +44,10 @@ firebase deploy
 #### Other services
 - **Domain:** RoTLD
 - **CDN provider:** CloudFlare
+
+> I might want to use this tools but still figuring out \
+> This section will be deleted after finishing the project \
+> Material UI, Radix, React Spectrum, Prime react, react spring, react select, framer motion, UnDraw (SVG images)
 
 All backed up on my personal [GiHub repo](https://github.com/infinityatom/Vuia-loft-apartments)
 
