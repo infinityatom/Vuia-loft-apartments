@@ -39,15 +39,17 @@ firebase deploy
 
 - **Server:** Firebase (hosting and server functions)
 
-- **Frameworks:** BlurHash, Framer Motion, SendGrid, SVGator
+- **Frameworks:** BlurHash, Framer Motion, SendGrid
 
 #### Other services
 - **Domain:** RoTLD
 - **CDN provider:** CloudFlare
+- **SVG editor / animation:** Figma, Rive
 
 > I might want to use this tools but still figuring out \
 > This section will be deleted after finishing the project \
-> Material UI, Radix, React Spectrum, Prime react, react spring, react select, framer motion, UnDraw (SVG images)
+> Material UI, Radix, React Spectrum, Prime react, react spring, react select, framer motion, UnDraw (SVG images) \
+> https://easings.net
 
 All backed up on my personal [GiHub repo](https://github.com/infinityatom/Vuia-loft-apartments)
 
