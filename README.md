@@ -36,20 +36,36 @@ firebase deploy
 ## Tech Stack
 
 - **Client:** React, Vite
-
 - **Server:** Firebase (hosting and server functions)
 
-- **Frameworks:** BlurHash, Framer Motion, SendGrid
+### Frameworks:
+- BlurHash ( image processing )
+- SendGrid ( emailing )
+- Material UI ( components, fonts, icons )
+- react spring ( animation )
+- react-router-dom
+- (animation)
 
-#### Other services
+### Other services
 - **Domain:** RoTLD
 - **CDN provider:** CloudFlare
 - **SVG editor / animation:** Figma, Rive
 
+### Helpers
+- [Easings](https://easings.net) for curve animation
+- [Http codes](https://developer.mozilla.org/en-US/docs/Web/HTTP/Status)
+
 > I might want to use this tools but still figuring out \
-> This section will be deleted after finishing the project \
-> Material UI, Radix, React Spectrum, Prime react, react spring, react select, framer motion, UnDraw (SVG images) \
-> https://easings.net
+> This section will be deleted after finishing the project
+>- Framer Motion (animation tool kit)
+>- Radix (nice looking components)
+>- React Spectrum (adobe hooks)
+>- Prime react (complex components)
+>- react select (select component)
+>- UnDraw (SVG images)
+>- rxjs (async / await manipulation)
+>- react helmet (metadata)
+>- lodash (function, array, object, ... , manipulation)
 
 All backed up on my personal [GiHub repo](https://github.com/infinityatom/Vuia-loft-apartments)
 
