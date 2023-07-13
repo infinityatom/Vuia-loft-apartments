@@ -1,0 +1,105 @@
+[ {
+	"tip_apartament": "A",
+	"etaj_disponibilitate": [2, 3, 4],
+	"suprafata_utila": 42,
+	"suprafata_construita": 0,
+	"pret_imobil": 0,
+	"pret_pe_mp": 0,
+
+	"domitor_1_mp": 0,
+	"domitor_2_mp": 0,
+	"baie_1_mp": 0,
+	"baie_2_mp": 0,
+	"terasa_mp": 0,
+	"hol_mp": 0,
+	"imgs": [
+		"https://www.cadpro.com/wp-content/uploads/2018/03/Popular-Apartment-Floor-Plan-Designs.png"
+	]
+}, {
+	"tip_apartament": "B",
+	"etaj_disponibilitate": [2, 3, 4],
+	"suprafata_utila": 73,
+	"suprafata_construita": 0,
+	"pret_imobil": 0,
+	"pret_pe_mp": 0,
+
+	"domitor_1_mp": 0,
+	"domitor_2_mp": 0,
+	"baie_1_mp": 0,
+	"baie_2_mp": 0,
+	"terasa_mp": 0,
+	"hol_mp": 0,
+	"imgs": [
+		"https://www.apartments.com/images/librariesprovider2/default-album/apartment-floor-plan-nantucket-apartments-madison-wi.jpg?sfvrsn=bf7f4c04_0",
+		"https://thumbs.dreamstime.com/z/apartment-plan-blueprint-shoot-house-isolated-92293108.jpg"
+	]
+}, {
+	"tip_apartament": "C",
+	"etaj_disponibilitate": [2, 3, 4],
+	"suprafata_utila": 23,
+	"suprafata_construita": 0,
+	"pret_imobil": 0,
+	"pret_pe_mp": 0,
+
+	"domitor_1_mp": 0,
+	"domitor_2_mp": 0,
+	"baie_1_mp": 0,
+	"baie_2_mp": 0,
+	"terasa_mp": 0,
+	"hol_mp": 0,
+	"imgs": [
+		"https://www.apartments.com/images/librariesprovider2/default-album/apartment-floor-plan-nantucket-apartments-madison-wi.jpg?sfvrsn=bf7f4c04_0"
+	]
+}, {
+	"tip_apartament": "D",
+	"etaj_disponibilitate": [2, 3, 4],
+	"suprafata_utila": 45,
+	"suprafata_construita": 0,
+	"pret_imobil": 0,
+	"pret_pe_mp": 0,
+
+	"domitor_1_mp": 0,
+	"domitor_2_mp": 0,
+	"baie_1_mp": 0,
+	"baie_2_mp": 0,
+	"terasa_mp": 0,
+	"hol_mp": 0,
+	"imgs": [
+		"https://vantageonthepark.com/wp-content/uploads/1A-ADA-1-bed-1-bath-690.jpg"
+	]
+}, {
+	"tip_apartament": "E",
+	"etaj_disponibilitate": [2, 3, 4],
+	"suprafata_utila": 53,
+	"suprafata_construita": 0,
+	"pret_imobil": 0,
+	"pret_pe_mp": 0,
+
+	"domitor_1_mp": 0,
+	"domitor_2_mp": 0,
+	"baie_1_mp": 0,
+	"baie_2_mp": 0,
+	"terasa_mp": 0,
+	"hol_mp": 0,
+	"imgs": [
+		"https://i.pinimg.com/originals/1a/91/f2/1a91f210d454d8bbf576903df774a232.jpg"
+	]
+}, {
+	"tip_apartament": "F",
+	"etaj_disponibilitate": [2, 3, 4],
+	"suprafata_utila": 94,
+	"suprafata_construita": 0,
+	"pret_imobil": 0,
+	"pret_pe_mp": 0,
+
+	"domitor_1_mp": 0,
+	"domitor_2_mp": 0,
+	"baie_1_mp": 0,
+	"baie_2_mp": 0,
+	"terasa_mp": 0,
+	"hol_mp": 0,
+	"imgs": [
+		"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS-fucPlXAtCXB1l3liSOxIuJer_gF2bwBEsA5m8EDf7BtDPLbndROW0ObZJOk4wp2UxAs&usqp=CAU"
+	]
+}
+]

@@ -1,8 +1,8 @@
 import { useRouteError, isRouteErrorResponse } from "react-router-dom";
 
 export default function Not_found() {
-	const error = useRouteError() as Error;
-	let errorMessage: string;
+	const error = useRouteError();
+	let errorMessage = "";
 
 	if (isRouteErrorResponse(error)) {
 		errorMessage = error.error?.message || error.statusText;

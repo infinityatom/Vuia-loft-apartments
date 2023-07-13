@@ -44,7 +44,7 @@ firebase deploy
 - Material UI ( components, fonts, icons )
 - react spring ( animation )
 - react-router-dom
-- (animation)
+- Radix (nice looking components)
 
 ### Other services
 - **Domain:** RoTLD
@@ -58,7 +58,7 @@ firebase deploy
 > I might want to use this tools but still figuring out \
 > This section will be deleted after finishing the project
 >- Framer Motion (animation tool kit)
->- Radix (nice looking components)
+>- Blueprintjs (must use)
 >- React Spectrum (adobe hooks)
 >- Prime react (complex components)
 >- react select (select component)
