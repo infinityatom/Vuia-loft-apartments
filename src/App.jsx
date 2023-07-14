@@ -1,5 +1,3 @@
-import './App.css';
-
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Not_found from './http-response-status-pages/not_found';
 import { StrictMode } from 'react';

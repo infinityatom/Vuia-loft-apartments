@@ -1,3 +1,4 @@
+import '../css/Header.css';
 import { Blurhash } from "react-blurhash";
 
 export default function Header() {

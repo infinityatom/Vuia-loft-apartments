@@ -1,5 +1,5 @@
-import Intro from '../pages/intro';
-// import Header from '../components/header';
+// import Intro from '../pages/intro';
+import Header from '../components/header';
 // import PhotoLibrary from '../components/photo_library';
 // import Apartments from '../components/apartments';
 // import Location from '../components/location';
@@ -8,11 +8,14 @@ import Intro from '../pages/intro';
 // import Contact from '../components/contact';
 // import Footer from '../components/footer';
 
-export default function Index() { // this is just provisory
+import '../css/Index.css';
+
+export default function Index() {
+	
 	return (
-		<div>
-			<Intro /> {/* TODO CSS */}
-			{/* <Header /> */} {/* TODO Header */}
+		<>
+			{/* <Intro /> */} {/* TODO CSS */}
+			<Header /> {/* TODO Header */}
 			{/* <PhotoLibrary /> */} {/* TODO PhotoLibrary */}
 			{/* <Apartments /> */} {/* TODO Apartments */}
 			{/* <Location /> */} {/* TODO Location */}
@@ -20,6 +23,6 @@ export default function Index() { // this is just provisory
 			{/* <About /> */} {/* TODO About */}
 			{/* <Contact />  */} {/* TODO PhotoLibrary CSS */}
 			{/* <Footer /> */} {/* TODO Footer */}
-		</div>
+		</>
 	)
 }
