@@ -31,6 +31,7 @@ export default function Contact() {
 
 
 			<Form.Root
+				encType = 'application/x-www-form-urlencoded'
 				onSubmit={(event) => {
 					event.preventDefault();
 				}}

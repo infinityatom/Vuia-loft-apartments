@@ -1,23 +1,28 @@
 import { useRive, useStateMachineInput } from '@rive-app/react-canvas';
 import { useEffect } from 'react';
 
-export default function Intro() {
+export default function Intro({ onLoaded }) {
+	
 	const { rive, RiveComponent } = useRive({
 		src: './riv/vuia-loft-apartments-logo.riv',
 		stateMachines: 'state',
 		autoplay: true,
-	});
-
-	const pass = useStateMachineInput(rive, 'state', 'pass', false);
+		onLoad: () => {
+			console.log('loaded');
+			onLoaded();
+		},
+	}, );
 	
+	const loading = useStateMachineInput(rive, 'state', 'loading', true);
 	useEffect(() => {
-		pass && (pass.value = true)
-	}, [pass]);
+		loading && (loading.value = true);
+	}, [loading]);
 
 	return (
 		<RiveComponent style={{
 			width: 400,
 			height: 400,
-		}} />
+		}}
+		/>
 	)
 }
