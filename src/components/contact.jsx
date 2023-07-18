@@ -20,7 +20,31 @@ export default function Contact() {
 	}
 
 	function submitClicked() {
-		handleSelected()
+		handleSelected();
+	}
+
+	function onSubmit(event) {
+		event.preventDefault();
+
+		const target = event.target;
+		const form = new FormData(target);
+		const urlEncoded = new URLSearchParams(form).toString();
+
+		fetch(target.action, {
+			method: target.method,
+			headers: { 'Content-Type': target.enctype },
+			body: urlEncoded,
+		})
+		.then(response => {
+			if (response.ok) {
+				alert('The email has been succesfully sent :)');
+			} else {
+				alert('We couldn\'t send your email\nHttp status code: ' + response.status);
+			}
+		})
+		.catch(error => {
+			alert('An error has occured:\n' + error);
+		});
 	}
 
 	return (
@@ -35,12 +59,9 @@ export default function Contact() {
 
 			<Form.Root
 				encType='application/x-www-form-urlencoded'
-				action='https://helloworld-uvzllxrx4a-uc.a.run.app'
+				action='https://sendemail-uvzllxrx4a-uc.a.run.app'
 				method='post'
-				onSubmit={(event) => {
-					console.log(event);
-					// event.preventDefault();
-				}}
+				onSubmit={onSubmit}
 				className='ContactForm'
 			>
 				<Form.Field className='Field Name' name='name'>
@@ -60,7 +81,7 @@ export default function Contact() {
 					<Form.Control type='email' required placeholder='example@example.com' />
 				</Form.Field>
 
-				<Form.Field className='Field Phone' name='tel'>
+				<Form.Field className='Field Phone' name='phone'>
 					<div className="FieldHead">
 						<Form.Label className='FieldLabel'>Telefon</Form.Label>
 						<Form.Message className='FieldWarning' match='typeMismatch'>Acest numar nu este valid</Form.Message>
@@ -68,7 +89,7 @@ export default function Contact() {
 					<Form.Control type='tel' required placeholder='tel' />
 				</Form.Field>
 
-				<Form.Field className='Field Subject' name='type'>
+				<Form.Field className='Field Subject' name='subject'>
 					<div className="FieldHead">
 						<Form.Message className='FieldWarning' match='valueMissing'>Selectati un subiect</Form.Message>
 					</div>
@@ -79,14 +100,14 @@ export default function Contact() {
 							onValueChange={handleSelected}
 							required
 						>
-							<SelectItem value='1'>Item 1</SelectItem>
-							<SelectItem value='2'>Item 2</SelectItem>
-							<SelectItem value='3'>Item 3</SelectItem>
+							<SelectItem value='Preturi'>Preturi</SelectItem>
+							<SelectItem value='Constructie'>Constructie</SelectItem>
+							<SelectItem value='Acte'>Acte</SelectItem>
 						</Select>
 					</Form.Control>
 				</Form.Field>
 
-				<Form.Field className='Field Message' name='intrebare'>
+				<Form.Field className='Field Message' name='message'>
 					<div className="FieldHead">
 						<Form.Label className='FieldLabel'>Puneti o intrebare</Form.Label>
 						<Form.Message className='FieldWarning' match='valueMissing'>Nu uitati sa scrieti intrebarea dumneavoastra in patratica de mai jos</Form.Message>

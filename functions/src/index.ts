@@ -35,7 +35,7 @@ app.post("/", (req, res) => {
   return res.status(200).send("Email has been successfully sent");
 });
 
-function _sendEmail(name: string, emailTo: string, emailFrom: string, subject: string, message: string, phone: string) {
+function _sendEmail(emailTo: string, name: string, emailFrom: string, subject: string, message: string, phone: string) {
   const msg = {
     from: "zingier.hobby0e@icloud.com", // Change to your verified sender
     to: emailTo, // Change to your recipient
@@ -43,14 +43,13 @@ function _sendEmail(name: string, emailTo: string, emailFrom: string, subject: s
     text: "This is the text part and I still don't know what it is for",
     html: `<h1>Vuia loft apartments</h1>\
       <h3>${name}</h3>\
-      <p>Emailul ${emailFrom}\
-      Tel: ${phone}\
-      A scis:\
-      ${message}</p>`,
+      <p>email: ${emailFrom}</p>\
+      <p>tel: ${phone}</p>\
+      <p>message</p>\
+      <p>${message}</p>`,
   };
 
 
-  info('<<<<<<<<<<<<<<<<<<< sadasd >>>>>>>>>>>>>>>>>>>>');
   sgMail.send(msg)
     .then(() => {
       info(`Email sent to <${emailTo}> from custumer's email <${emailFrom}>`);
