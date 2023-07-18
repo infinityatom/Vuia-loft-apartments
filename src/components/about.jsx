@@ -1,6 +1,10 @@
+import '../css/About.css';
 
 export default function About() {
 	return (
-		<div>about</div>
+		<section className='About'>
+			<b>about</b>
+			<p>nested</p>
+		</section>
 	)
 }

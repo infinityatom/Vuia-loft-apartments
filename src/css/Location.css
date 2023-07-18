@@ -1,0 +1,9 @@
+.Card {
+	background-color: antiquewhite;
+	width: 300px;
+	height: 300px;
+}
+
+.Icon {
+	vertical-align: bottom;
+}

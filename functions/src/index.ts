@@ -14,44 +14,50 @@ app.use(express.json());
 app.use(express.urlencoded({extended: false}));
 
 app.post("/", (req, res) => {
-  const {email, subject, message} = req.body;
+  const {name, phone, email, subject, message} = req.body;
 
-  if (!email || !subject || !message) {
+  if (!name || !email || !subject || !message) {
     warn("Invalid form data should not exist!");
-    warn(`Email: ${email}`);
-    warn(`Subject: ${subject}`);
-    warn(`Message: ${message}`);
+    warn(`Name: ${name} Phone number ${phone} Email: ${email} Subject: ${subject} Message: ${message}`);
 
     return res.status(406).end(`I need a valid email:\n\
+      name: ${name}\n\
+      phone: ${phone}\n\
       email: '${email}'\n\
       subject: '${subject}'\n\
       message: '${message}'\n`
     );
   }
 
-  sendEmail("orsobrunoradauti@gmail.com", email, subject, message);
-  sendEmail("ifrim_gicusor@icloud.com", email, subject, message);
+  _sendEmail("orsobrunoradauti@gmail.com", name, email, subject, message, phone??'');
+  _sendEmail("ifrim_gicusor@icloud.com", name, email, subject, message, phone??'');
 
   return res.status(200).send("Email has been successfully sent");
 });
 
-function sendEmail(emailTo: string, emailFrom: string, subject: string, message: string) {
+function _sendEmail(name: string, emailTo: string, emailFrom: string, subject: string, message: string, phone: string) {
   const msg = {
     from: "zingier.hobby0e@icloud.com", // Change to your verified sender
     to: emailTo, // Change to your recipient
     subject: subject,
     text: "This is the text part and I still don't know what it is for",
     html: `<h1>Vuia loft apartments</h1>\
-      <h3>Persoana cu emailul ${emailFrom} a scis:</h3><p>${message}</p>`,
+      <h3>${name}</h3>\
+      <p>Emailul ${emailFrom}\
+      Tel: ${phone}\
+      A scis:\
+      ${message}</p>`,
   };
 
+
+  info('<<<<<<<<<<<<<<<<<<< sadasd >>>>>>>>>>>>>>>>>>>>');
   sgMail.send(msg)
     .then(() => {
-      info(`Email sent to <${emailTo}> from custumers email <${emailFrom}>`);
+      info(`Email sent to <${emailTo}> from custumer's email <${emailFrom}>`);
     })
     .catch((error) => {
       _error(error);
     });
 }
 
-export const helloWorld = onRequest(app);
+export const sendEmail = onRequest(app);

@@ -1,0 +1,62 @@
+.Contact>h1 {
+	width: 100%;
+	text-align: center;
+}
+
+.Contact {
+	margin: 0 7vw;
+	display: grid;
+	justify-items: center;
+}
+
+.Info {}
+
+.Field {
+	display: grid;
+}
+
+.FieldHead {
+	display: flex;
+	align-items: baseline;
+	justify-content: space-between;
+}
+
+
+.FieldLabel {
+	/* display: none; */
+}
+
+.FieldWarning {
+	/* display: none; */
+}
+
+.ContactForm {
+	display: grid;
+	grid-template-columns: repeat(auto-fit, minmax(15em, 1fr));
+	gap: 1rem 2rem;
+
+	max-width: 750px;
+	width: 100%;
+	min-width: 20rem;
+}
+
+.Name {}
+
+.LastName {}
+
+.Phone {}
+
+.Email {}
+
+.Subject {}
+
+.Message>textarea {
+	resize: vertical;
+}
+
+.Submit,
+.Message {
+	grid-column: 1 / -1;
+}
+
+/* 424B5A */

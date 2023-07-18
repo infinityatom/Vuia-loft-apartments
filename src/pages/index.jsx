@@ -1,12 +1,12 @@
 
 import { useState, Suspense, lazy } from 'react';
 import Intro from '../pages/intro';
+import Header from '../components/header';
 
 // email api key
 // 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
 // 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
 
-const Header = lazy(() => import('../components/header'));
 const PhotoLibrary = lazy(() => import('../components/photo_library'));
 const Apartments = lazy(() => import('../components/apartments'));
 const Location = lazy(() => import('../components/location'));
@@ -28,10 +28,11 @@ export default function Index() {
 
 	return (
 		<>
-			<Intro onLoaded={() => {
+			{/* <Intro onLoaded={() => {
 				setIntroLoaded(true)
 			}} />
-			{introLoaded ? <Content /> : null}
+			{introLoaded ? <Content /> : null} */}
+			<Content/>
 
 		</>
 	)
@@ -39,15 +40,17 @@ export default function Index() {
 
 function Content() {
 	return (
+		<>
+		{/* <Header /> */}
 		<Suspense>
-			<Header />
-			<PhotoLibrary />
+			{/* <PhotoLibrary />
 			<Apartments />
 			<Location />
 			<Questions />
-			<About />
+			<About /> */}
 			<Contact />
-			<Footer />
+			{/* <Footer /> */}
 		</Suspense>
+		</>
 	)
 }

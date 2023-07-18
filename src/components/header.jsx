@@ -1,17 +1,14 @@
 import '../css/Header.css';
-import { Blurhash } from "react-blurhash";
+
+import LazyHashedImage from './lazy_hashed_image';
+import image from '../assets/images/prop-1.jpg';
 
 export default function Header() {
+	const hash = 'LYA-^@ofR.bb.Af8R+a#tlR+WBf5';
+
 	return (
-		<>
-			<Blurhash
-				hash="PwJRmsM_skxtM_e.Rif5_NM{adofV@WBaejtR*t7M{RjkCWVofof"
-				width={'100%'}
-				height={'100%'}
-				resolutionY={8 * 32}
-				resolutionX={3 * 32}
-				className="blurHash"
-			/>
-		</>
+		<div className='Header'>
+			<LazyHashedImage src='https://upload.wikimedia.org/wikipedia/commons/3/3f/Fronalpstock_big.jpg' hash={hash} />
+		</div>
 	)
 }

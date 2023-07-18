@@ -6,6 +6,8 @@ import {
 	ChevronUpIcon,
 } from '@radix-ui/react-icons';
 
+import '../css/SelectSimplified.css';
+
 export const Select = forwardRef(({ onValueChange, placeholder, children, ...props }, ref) => {
 	const [value, setValue] = useState(null);
 
@@ -16,19 +18,19 @@ export const Select = forwardRef(({ onValueChange, placeholder, children, ...pro
 
 	return (
 		<SelectPrimitive.Root onValueChange={handleValue} {...props}>
-			<SelectPrimitive.Trigger ref={ref} value={value}>
+			<SelectPrimitive.Trigger className="SelectTrigger" ref={ref} value={value}>
 				<SelectPrimitive.Value aria-label={value} placeholder={placeholder} />
-				<SelectPrimitive.Icon>
+				<SelectPrimitive.Icon className="SelectIcon">
 					<ChevronDownIcon />
 				</SelectPrimitive.Icon>
 			</SelectPrimitive.Trigger>
 			<SelectPrimitive.Portal>
-				<SelectPrimitive.Content>
-					<SelectPrimitive.ScrollUpButton>
+				<SelectPrimitive.Content className="SelectContent">
+					<SelectPrimitive.ScrollUpButton className="SelectScrollButton">
 						<ChevronUpIcon />
 					</SelectPrimitive.ScrollUpButton>
-					<SelectPrimitive.Viewport>{children}</SelectPrimitive.Viewport>
-					<SelectPrimitive.ScrollDownButton>
+					<SelectPrimitive.Viewport className="SelectViewport">{children}</SelectPrimitive.Viewport>
+					<SelectPrimitive.ScrollDownButton className="SelectScrollButton">
 						<ChevronDownIcon />
 					</SelectPrimitive.ScrollDownButton>
 				</SelectPrimitive.Content>
@@ -38,11 +40,11 @@ export const Select = forwardRef(({ onValueChange, placeholder, children, ...pro
 }
 );
 export const SelectItem = forwardRef(
-	({ children, ...props }, forwardedRef) => {
+	({ className, children, ...props }, forwardedRef) => {
 		return (
-			<SelectPrimitive.Item {...props} ref={forwardedRef}>
+			<SelectPrimitive.Item className={'SelectItem '+className} {...props} ref={forwardedRef}>
 				<SelectPrimitive.ItemText>{children}</SelectPrimitive.ItemText>
-				<SelectPrimitive.ItemIndicator>
+				<SelectPrimitive.ItemIndicator className='SelectItemIndicator'>
 					<CheckIcon />
 				</SelectPrimitive.ItemIndicator>
 			</SelectPrimitive.Item>

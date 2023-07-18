@@ -1,0 +1,96 @@
+:root {
+	--padding1: 5vw;
+	--gap1: 2vw;
+	--some-small-padding: 7vw;
+	--some-small-padding2: 3.5vw;
+	--some-padding: 4rem;
+}
+
+.Questions {
+	margin: 0 var(--some-small-padding);
+}
+
+.Questions>h1 {
+	text-align: center;
+}
+
+.TabsList {
+	display: flex;
+	justify-content: center;
+	gap: var(--gap1);
+	margin: 0 var(--padding1);
+}
+
+
+
+.QAAccordion {
+	display: grid;
+	grid-template-columns: repeat(auto-fill, minmax(20rem, 1fr));
+	break-inside: avoid;
+	column-gap: var(--gap1);
+}
+
+.QAAccordionItem {}
+
+.QAAccordionHeader {
+	margin: 0;
+
+	border-bottom: 2px solid #C2D1D9;
+	border-radius: 2px;
+}
+
+.QAAccordionHeader:hover {
+	border-color: #424B5A;
+}
+
+.QAAccordionTrigger {
+	background-color: transparent;
+	border: none;
+	text-align: start;
+	cursor: pointer;
+	width: 100%;
+	height: 100%;
+	height: 4rem;
+
+	padding: 0 0 0 var(--padding1);
+	color: #424B5A;
+}
+
+.QAAccordionTrigger:hover {
+	color: black;
+}
+
+.QAAccordionContent {
+	padding-left: var(--padding1);
+	overflow: hidden;
+}
+
+.QAAccordionContent[data-state='open'] {
+	animation: slideDown 300ms ease;
+}
+
+.QAAccordionContent[data-state='closed'] {
+	animation: slideUp 300ms ease;
+}
+
+.QAAccordionItem {
+	width: 100%;
+}
+
+@keyframes slideDown {
+	from {
+	  height: 0;
+	}
+	to {
+	  height: var(--radix-accordion-content-height);
+	}
+  }
+  
+  @keyframes slideUp {
+	from {
+	  height: var(--radix-accordion-content-height);
+	}
+	to {
+	  height: 0;
+	}
+  }

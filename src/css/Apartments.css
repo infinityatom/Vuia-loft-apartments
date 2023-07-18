@@ -1,5 +1,68 @@
-.swiper-scrollbar {
-	background-color: aqua;
-	width: 100px;
-	height: 20px;
+.DialogTrigger {
+	height: 100%;
+	background-color: aquamarine;
+	padding: 0;
+	display: grid;
+	border: none;
+	grid-template: 'container';
+}
+
+.DialogTrigger>* {
+	grid-area: container;
+}
+
+.DialogTrigger>img {
+	object-fit: cover;
+	width: 100%;
+	height: 100%;
+}
+
+.DialogTrigger>p {
+	color: black;
+	place-self: end center;
+	background-color: rebeccapurple;
+	margin: 0;
+	margin-bottom: 3rem;
+	padding: 1rem;
+	border-radius: 1rem;
+}
+
+.DialogContent {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 80vw;
+	height: 80vh;
+	z-index: 1;
+	background-color: white;
+}
+
+.DialogDescription {
+	color: #A1AEB7;
+	list-style: none;
+}
+
+.DialogTitle {
+	color: #505D68;
+}
+
+.DialogClose {
+	display: none;
+}
+
+.DialogContent swiper-container {
+	width: 300px;
+	height: 300px;
+	background-color: green;
+}
+
+.DialogContent swiper-slide > img {
+	width: 100%;
+	height: 100%;
+	object-fit: contain;
+}
+
+swiper-container {
+	width: 100vw;
+	height: 500px;
 }
