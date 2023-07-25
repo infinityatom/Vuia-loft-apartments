@@ -1,5 +1,5 @@
 
-import { useState, Suspense, lazy } from 'react';
+import { useState, Suspense, lazy, useEffect } from 'react';
 import Intro from '../pages/intro';
 import Header from '../components/header';
 
@@ -32,7 +32,7 @@ export default function Index() {
 				setIntroLoaded(true)
 			}} />
 			{introLoaded ? <Content /> : null} */}
-			<Content/>
+			<Content />
 
 		</>
 	)
@@ -41,16 +41,16 @@ export default function Index() {
 function Content() {
 	return (
 		<>
-		{/* <Header /> */}
-		<Suspense>
-			{/* <PhotoLibrary />
-			<Apartments />
+			{/* <Header /> */}
+			<Suspense>
+				<PhotoLibrary />
+				{/* <Apartments />
 			<Location />
 			<Questions />
-			<About /> */}
+			<About />
 			<Contact />
-			{/* <Footer /> */}
-		</Suspense>
+			<Footer /> */}
+			</Suspense>
 		</>
 	)
 }

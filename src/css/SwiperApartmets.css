@@ -1,0 +1,38 @@
+.swiper {
+	--height: 2rem;
+	--width: 20rem;
+}
+
+.swiper-horizontal > .swiper-scrollbar, .swiper-scrollbar.swiper-scrollbar-horizontal {
+	left: unset;
+	top: 0;
+	right: var(--padding-default);
+	bottom: unset;
+	width: var(--width);
+	height: var(--height);
+	border-radius: 0;
+	background-color: var(--color-border);
+	background-color: transparent;
+}
+
+.swiper-scrollbar-drag {
+	height: 5px;
+	border-radius: 5px;
+	background-color: var(--color-accent);
+	top: calc(var(--height) - 2px);
+}
+
+::slotted(.container-start) {
+	display: flex;
+	justify-content: space-evenly;
+	align-items: center;
+	float: right;
+
+	color: var(--color-unset2);
+	
+	width: var(--width);
+	height: var(--height);
+	margin-right: var(--padding-default);
+	border-bottom: 3px solid var(--color-border);
+}
+

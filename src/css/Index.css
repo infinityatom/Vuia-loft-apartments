@@ -35,6 +35,11 @@
 	--color-button-hover-bg: var(--color-11);
 	--color-highlighted: var(--color-3);
 	--color-border: var(--color-2);
+	--color-unset2: var(--color-6);
+
+	--padding-default: 5vw;
+	--gap-default: 2vw;
+	--border-radius: 3px;
 }
 
 body {

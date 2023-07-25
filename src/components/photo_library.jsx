@@ -10,145 +10,156 @@ const libraryTestUrls = [
 	'./images/imagini bloc suceava pentru anunt/favorites/8.jpg',
 ];
 
-import { useDrag } from '@use-gesture/react'
-import { a, useSpring, config } from '@react-spring/web'
+import { useEffect, useState, useRef } from 'react';
 
-import '../css/Photo_library.css'
+import '../css/Photo_library.css';
+import useHorizontalDrag from '../hooks/useHorizontalDrag';
 
-export function Testing() {
-	const items = ['save item', 'open item', 'share item', 'delete item', 'cancel']
-	const height = items.length * 60 + 80
-	const [{ y }, api] = useSpring(() => ({ y: height }))
+import { ParallaxProvider, ParallaxBanner } from 'react-scroll-parallax';
+import { Gallery, GalleryImage, ImageCategory, LoopGallery } from '../js/gallery';
 
-	const open = ({ canceled }) => {
-		// when cancel is true, it means that the user passed the upwards threshold
-		// so we change the spring config to create a nice wobbly effect
-		api.start({ y: 0, immediate: false, config: canceled ? config.wobbly : config.stiff })
-	}
-	const close = (velocity = 0) => {
-		api.start({ y: height, immediate: false, config: { ...config.stiff, velocity } })
-	}
+export default function PhotoLibrary() {
+	const [scrollEl, setScrollElement] = useState(null);
 
-	const bind = useDrag(
-		({ last, velocity: [, vy], direction: [, dy], offset: [, oy], cancel, canceled }) => {
-			// if the user drags up passed a threshold, then we cancel
-			// the drag so that the sheet resets to its open position
-			if (oy < -70) cancel()
+	const containerRef = useHorizontalDrag();
 
-			// when the user releases the sheet, we check whether it passed
-			// the threshold for it to close, or if we reset it to its open positino
-			if (last) {
-				oy > height * 0.5 || (vy > 0.5 && dy > 0) ? close(vy) : open({ canceled })
-			}
-			// when the user keeps dragging, we just move the sheet according to
-			// the cursor position
-			else api.start({ y: oy, immediate: true })
-		},
-		{ from: () => [0, y.get()], filterTaps: true, bounds: { top: 0 }, rubberband: true }
-	)
+	useEffect(() => {
+		setScrollElement(containerRef.current);
+	}, [containerRef]);
 
-	const display = y.to((py) => (py < height ? 'block' : 'none'))
-
-	const bgStyle = {
-		transform: y.to([0, height], ['translateY(-8%) scale(1.16)', 'translateY(0px) scale(1.05)']),
-		opacity: y.to([0, height], [0.4, 1], 'clamp'),
-	}
 	return (
-		<div className="flex"
-			style={{
-				overflow: 'hidden',
-			}}
+		<section className='PhotoLibrary'>
+			<div className='Slider' ref={containerRef}>
+				<ParallaxProvider scrollAxis="horizontal" scrollContainer={scrollEl}>
+					{libraryTestUrls.map((src) => {
+						return (
+							<div className="SliderImage" key={src}>
+								<ParallaxBanner
+									layers={[{
+										image: `'${src}'`,
+										scale: [0.75, 0.95],
+										easing: [0.75, 2, 0.47, 0.93],
+									}]}
+									className='ImageParallax'
+									draggable='false'
+								/>
+							</div>
+						);
+					})}
+				</ParallaxProvider>
+			</div>
+			<div className="SliderViewFullLibrary">
+				<button>Vezi toata galeria</button>
+			</div>
 
-		>
-			<a.div
-				className='bg'
-				onClick={() => close()}
-				style={bgStyle}
-			>
-				<img
-					src="https://images.pexels.com/photos/1239387/pexels-photo-1239387.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
-					alt=""
-				/>
-				<img
-					src="https://images.pexels.com/photos/5181179/pexels-photo-5181179.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
-					alt=""
-				/>
-			</a.div>
-			<div className='actionBtn' onClick={open}></div>
-			<a.div
-				className='sheet'
-				{...bind()}
-				style={{
-					display,
-					bottom: `calc(-100vh + ${height - 100}px)`,
-					y
-				}}
-			>
-				{libraryTestUrls.map((src) => {
-					return (
-						<img src={src} key={src} />
-					);
-				})}
-			</a.div>
-		</div>
+			<Helper />
+		</section>
 	)
 }
 
+const testImages = [
+	new GalleryImage('https://images.unsplash.com/photo-1524781289445-ddf8f5695861?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1770&q=80', ImageCategory.Interior),
+	new GalleryImage('https://images.unsplash.com/photo-1610194352361-4c81a6a8967e?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1674&q=80', ImageCategory.Interior),
+	new GalleryImage('https://images.unsplash.com/photo-1618202133208-2907bebba9e1?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1770&q=80', ImageCategory.Exterior),
+	new GalleryImage('https://images.unsplash.com/photo-1495805442109-bf1cf975750b?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1770&q=80', ImageCategory.Exterior),
+	new GalleryImage('https://images.unsplash.com/photo-1548021682-1720ed403a5b?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1770&q=80', ImageCategory.Exterior),
+	new GalleryImage('https://images.unsplash.com/photo-1496753480864-3e588e0269b3?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2134&q=80', ImageCategory.Proiect),
+	new GalleryImage('https://images.unsplash.com/photo-1613346945084-35cccc812dd5?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1759&q=80', ImageCategory.Proiect),
+	new GalleryImage('https://images.unsplash.com/photo-1516681100942-77d8e7f9dd97?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1770&q=80', ImageCategory.Proiect),
+];
 
-export default function PhotoLibrary() {
+function Helper() {
+	const galery = new Gallery(testImages);
+	const refs = useRef([]);
+
+	function next() {
+		const prevIndex = galery.index;
+		try {
+			galery.nextImg();
+		} catch (e) { /* empty */ }
+
+		delete refs.current[prevIndex].dataset.active;
+		refs.current[galery.index].dataset.active = 'true';
+	}
+	function prev() {
+		const prevIndex = galery.index;
+		try {
+			galery.prevImg();
+		} catch (e) { /* empty */ }
+
+		delete refs.current[prevIndex].dataset.active;
+		refs.current[galery.index].dataset.active = 'true';
+	}
+	function viewFullLibrary() {
+		console.log('viewFullLibrary');
+	}
+	function category(name) {
+		const prevIndex = galery.index;
+
+		if(galery.currentCategory.name == name && galery.loop == LoopGallery.none) {
+			galery.loop = LoopGallery.loopAll;
+			galery.images.forEach((img, i) => refs.current[i].hidden = false );
+			return;
+		}
+
+		try {
+			galery.goToCategory(name);
+		} catch (e) {
+			console.log(e);
+		}
+
+		
+		const currentCategory = galery.currentCategory;
+		
+		galery.loop = LoopGallery.none;
+
+		galery.images.forEach((img, i) => {
+			if (img.category == currentCategory.name) {
+				refs.current[i].hidden = false;
+			} else {
+				refs.current[i].hidden = true;
+			}
+		});
+
+		delete refs.current[prevIndex].dataset.active;
+		refs.current[galery.index].dataset.active = 'true';
+	}
+
+	useEffect(() => {
+		// galery.urls.map((url, index) => {
+		// 	refs.current[index].dataset.active = 'false';
+		// });
+	}, [galery.urls]);
+
 	return (
-		<>
-			<div>
-				<button style={{width:'200px', height:'200px'}}>
-					<h5>Randari interior</h5>
-					<img src="./images/imagini bloc suceava pentru anunt/favorites/1.jpg"
-						style={{
-							width: '100%',
-							height: '100%'
-						}}
-					/>
-				</button>
-				<button style={{width:'200px', height:'200px'}}>
-					<h5>Randari exterior</h5>
-					<img src="./images/imagini bloc suceava pentru anunt/favorites/2.jpg"
-						style={{
-							width: '100%',
-							height: '100%'
-						}}
-					/>
-				</button>
-				<button style={{width:'200px', height:'200px'}}>
-					<h5>Poze</h5>
-					<img src="./images/imagini bloc suceava pentru anunt/favorites/3.jpg"
-						style={{
-							width: '100%',
-							height: '100%'
-						}}
-					/>
-				</button>
-				<button style={{width:'200px', height:'200px'}}>
-					<h5>Planuri</h5>
-					<img src="./images/imagini bloc suceava pentru anunt/favorites/4.jpg"
-						style={{
-							width: '100%',
-							height: '100%'
-						}}
-					/>
-				</button>
+		<div className="GridContainer">
+			<div className='Category'>
+				{galery.getCategories.map(({ name }) =>
+					<button key={name} onClick={() => category(name)}>{name}</button>
+				)}
 			</div>
-			<div>
-				{libraryTestUrls.map((src) => {
-					return (
-						<img src={src}
-							key={src}
-							style={{
-								width: '200px',
-								height: '200px'
-							}}
-						/>
-					);
-				})}
+			<div className='ViewFullAndPrev'>
+				<div className='ViewFullLibrary'>
+					<button onClick={viewFullLibrary}>Vezi toata galeria</button>
+				</div>
+				<div className='Prev'>
+					<button onClick={prev}>Precedent</button>
+				</div>
 			</div>
-		</>
-	)
+			<div className='Next'>
+				<button onClick={next}>Urmatorul</button>
+			</div>
+
+			{galery.images.map((img, i) => {
+				return (
+					<div className='GridImage'
+						key={img.url}
+						ref={(ref) => refs.current[i] = ref}
+					>
+						<img src={img.url} />
+					</div>
+				);
+			})}
+		</div>
+	);
 }

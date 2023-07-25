@@ -1,24 +1,48 @@
 import * as Dialog from '@radix-ui/react-dialog';
 import { Cross2Icon } from '@radix-ui/react-icons';
 import DataApartments from '../data/DataApartments.json';
-
-// Import Swiper styles
-import 'swiper/css';
-import 'swiper/css/navigation';
-import 'swiper/css/pagination';
-import 'swiper/css/scrollbar';
-import 'swiper/css/keyboard';
-import 'swiper/css/mousewheel';
-import 'swiper/css/free-mode';
+import { useEffect, useRef } from 'react';
 
 import '../css/Apartments.css';
+import '../css/ApartmentsDialog.css';
+import SwiperApartmetsStyle from '../css/SwiperApartmets.css?inline';
 
 export default function Apartments() {
+	const swiperRef = useRef(null);
+
+	useEffect(() => {
+		const swiperContainer = swiperRef.current;
+		const params = {
+			mousewheel: {
+				forceToAxis: true,
+			},
+			scrollbar: {
+				draggable: true,
+			},
+			centeredSlides: true,
+			slidesPerView: 3,
+			keyboard: true,
+			freeMode: {
+				enabled: true,
+				sticky: false,
+			},
+			spaceBetween: 20,
+			injectStyles: [SwiperApartmetsStyle],
+		};
+
+		Object.assign(swiperContainer, params);
+		swiperContainer.initialize();
+	}, []);
 
 	return (
 		<section className='Apartments'>
 			<h1>Apartments</h1>
-			<swiper-container mousewheel-force-to-axis keyboard scrollbar free-mode centered-slides slides-per-view='3' >
+			<swiper-container init="false" ref={swiperRef}>
+				<div slot="container-start" className='container-start'>
+					<span>2 camere</span>
+					<span>3 camere</span>
+					<span>garsoniera</span>
+				</div>
 				{DataApartments.map(apartment => {
 					return (
 						<swiper-slide key={apartment.tip_apartament} >
@@ -26,7 +50,7 @@ export default function Apartments() {
 
 								<Dialog.Trigger className='DialogTrigger'>
 									<img src={apartment.imgs[0]} />
-									<p>{apartment.suprafata_utila} mp</p>
+									<h4>{apartment.suprafata_utila} mp</h4>
 								</Dialog.Trigger>
 
 								<DialogPortal apartment={apartment} />
@@ -43,7 +67,7 @@ export default function Apartments() {
 function DialogPortal({ apartment }) {
 	return (
 		<Dialog.Portal>
-			{/* <Dialog.Overlay /> */}
+			<Dialog.Overlay className='DialogOverlay' />
 			<Dialog.Content className='DialogContent'>
 				<DialogContentSwiper imgs={apartment.imgs} />
 				<Dialog.Title className='DialogTitle'>{apartment.tip_apartament}</Dialog.Title>

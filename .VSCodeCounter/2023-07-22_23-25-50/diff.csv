@@ -1,0 +1,14 @@
+"filename", "language", "JavaScript JSX", "JavaScript", "CSS", "comment", "blank", "total"
+"/Users/infinityatom/Projects/Bloc suceava/Vuia-loft-apartments/src/components/apartments.jsx", "JavaScript JSX", 25, 0, 0, -2, 1, 24
+"/Users/infinityatom/Projects/Bloc suceava/Vuia-loft-apartments/src/components/cell.jsx", "JavaScript JSX", 7, 0, 0, 0, 0, 7
+"/Users/infinityatom/Projects/Bloc suceava/Vuia-loft-apartments/src/components/full_screen_photo_library.jsx", "JavaScript JSX", 67, 0, 0, 0, 10, 77
+"/Users/infinityatom/Projects/Bloc suceava/Vuia-loft-apartments/src/components/photo_library.jsx", "JavaScript JSX", -46, 0, 0, -4, 3, -47
+"/Users/infinityatom/Projects/Bloc suceava/Vuia-loft-apartments/src/css/Apartments.css", "CSS", 0, 0, -22, 0, -5, -27
+"/Users/infinityatom/Projects/Bloc suceava/Vuia-loft-apartments/src/css/ApartmentsDialog.css", "CSS", 0, 0, 73, 0, 12, 85
+"/Users/infinityatom/Projects/Bloc suceava/Vuia-loft-apartments/src/css/FullScreenPhotoLibrary.css", "CSS", 0, 0, 11, 0, 2, 13
+"/Users/infinityatom/Projects/Bloc suceava/Vuia-loft-apartments/src/css/Index.css", "CSS", 0, 0, 4, 0, 1, 5
+"/Users/infinityatom/Projects/Bloc suceava/Vuia-loft-apartments/src/css/Photo_library.css", "CSS", 0, 0, 96, 2, 23, 121
+"/Users/infinityatom/Projects/Bloc suceava/Vuia-loft-apartments/src/css/SwiperApartmets.css", "CSS", 0, 0, 32, 0, 7, 39
+"/Users/infinityatom/Projects/Bloc suceava/Vuia-loft-apartments/src/hooks/useHorizontalDrag.jsx", "JavaScript JSX", 22, 0, 0, 0, 8, 30
+"/Users/infinityatom/Projects/Bloc suceava/Vuia-loft-apartments/src/js/gallery.js", "JavaScript", 0, 161, 0, 1, 25, 187
+"Total", "-", 75, 161, 194, -3, 87, 514
