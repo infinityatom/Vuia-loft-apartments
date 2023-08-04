@@ -1,0 +1,43 @@
+.Slider {
+	/* background-color: red; */
+	/* width: 10px;
+	height: 10px; */
+	display: flex;
+	overflow-x: scroll;
+}
+
+/* @media only screen and (min-width: 768px) {
+	.Slider {
+		display: none;
+	}
+} */
+
+.Slide {
+
+}
+
+.SliderButton {
+	text-align: center;
+}
+
+.SliderButton>button {
+	border-radius: 3px;
+	background-color: transparent;
+	border: 2px solid var(--color-accent);
+	padding: 1rem 2rem;
+}
+
+.Slide>img {
+	width: 250px;
+	height: 70vh;
+	object-fit: cover;
+	object-position: center;
+	margin: 0 20px;
+
+	user-drag: none;
+	user-select: none;
+	-moz-user-select: none;
+	-webkit-user-drag: none;
+	-webkit-user-select: none;
+	-ms-user-select: none;
+}

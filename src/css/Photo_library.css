@@ -1,6 +1,15 @@
 .PhotoLibrary {
 	background-color: darkgray;
 	padding: 20px 0;
+	isolation: isolate;
+
+	--size: 4px;
+	--position: calc(var(--size) / -2);
+	--position2: calc(var(--size) / 2);
+	--dot-size: 8px;
+	--dot-position: calc(var(--dot-size) / -2);
+	--padding-size: calc(var(--dot-size) / 4);
+	--padding-position: calc(var(--padding-size) / -2);
 }
 
 .Slider {
@@ -50,24 +59,87 @@
 	padding: 1rem 2rem;
 }
 
-.GridContainer {
+/* .Grid {
 	display: none;
 }
 
-
 @media only screen and (min-width: 768px) {
-
-	.Slider,
-	.SliderViewFullLibrary {
-		display: none;
+	.Grid {
+		display: flex;
+		flex-flow: column;
+		gap: 20px;
 	}
+} */
 
-	.GridContainer {
-		display: grid;
-	}
+.Grid {
+	display: flex;
+	flex-flow: column;
+	gap: 20px;
 }
 
-.GridContainer {
+
+.GridCategory {
+	display: grid;
+	grid-auto-columns: 150px;
+	grid-auto-flow: column;
+	justify-content: center;
+	align-content: center;
+	gap: 20px;
+}
+
+.GridCategory>button {
+	padding: 0;
+	margin: 0;
+	padding: 5px;
+}
+
+.GridCategory>button[data-active="true"] {
+	background-color: green;
+}
+
+.GridImages {
+	/* display: grid; */
+}
+
+.GridImages {
+	display: grid;
+	grid-auto-flow: column;
+	gap: 20px 20px;
+	padding: 0 200px;
+
+	grid-template-columns: repeat(3, minmax(35%, 1fr));
+	grid-template-rows: repeat(3, 1fr);
+
+	grid-auto-columns: minmax(35%, 1fr);
+	grid-auto-rows: 1fr;
+
+	-ms-overflow-style: none;
+	scrollbar-width: none;
+	overflow-y: scroll;
+}
+
+.GridImages::-webkit-scrollbar {
+	display: none;
+}
+
+.GridImages>button {
+	aspect-ratio: 16 / 9;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* .GridContainer {
 	grid-template-columns: repeat(4, 1fr);
 	grid-template-rows: repeat(3, 1fr);
 	align-items: stretch;
@@ -77,34 +149,73 @@
 	min-height: 500px;
 
 	grid-template-areas:
-		". . . Category"
-		". . . ViewFullAndPrev"
-		". . . Next";
+		"img img img Category"
+		"img img img ViewFullAndPrev"
+		"img img img Next";
 }
 
-.GridContainer>* {
-	/* width: 100%;
-	height: 100%; */
+.GridImages {
+	grid-area: img;
+	display: grid;
+	overflow: scroll;
+	gap: 20px;
+	padding-right: 15px;
+	margin-right: 5px;
+	grid-template-columns: repeat(3, 1fr);
+	grid-auto-rows: 30%;
+	position: relative;
 }
 
-.GridImage {
-	overflow: hidden;
+.FullScreenImage {
+	position: relative;
+	grid-area: img;
+	width: 100%;
 }
 
-.GridImage[data-active='true'] {
-	grid-column: 1 / -2;
-	grid-row: 1 / -1;
+.FullScreenImage>img {
+	position: absolute;
+	object-fit: cover;
+	width: 100%;
+	height: 100%;
+	display: none;
+}
+
+.FullScreenImage>img[data-active="true"] {
+	display: block;
+	z-index: 1;
+}
+
+.GridButton {
+
+}
+
+.GridImageContainer {
+	background-color: aliceblue;
+}
+
+.GridButton[data-active='true'] {
+	top: 0;
+	left: 0;
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	z-index: 1;
 }
 
 .GridImage>img {
 	width: 100%;
 	height: 100%;
+	position: absolute;
 	object-fit: cover;
 }
 
 .Category {
 	display: grid;
 	grid-area: Category;
+}
+
+.Category > button[data-active="true"] {
+	background-color: aquamarine;
 }
 
 .ViewFullAndPrev {
@@ -123,5 +234,114 @@
 .Next {
 	display: grid;
 	grid-area: Next;
-	min-height: max-content;
 }
+
+.GridContainer[data-view-full-library='false']>.GridImage {
+	grid-column: 1 / -2;
+	grid-row: 1 / -1;
+}
+
+
+
+
+
+
+
+
+.Cell {
+	display: grid;
+	position: relative;
+}
+
+.Cell > .overlay {
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	background-color: rgba(255, 0, 0, 0.511);
+	
+	z-index: -1;
+	pointer-events: none;
+	
+	transition: transform 300ms;
+	transform-origin: bottom right;
+	transform: scale(0);
+}
+
+.Cell:hover > .overlay {
+	transform-origin: top left;
+	transition: transform 300ms;
+	transform: scale(1);
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+.CellCorner {
+	width: var(--dot-size);
+	height: var(--dot-size);
+	background-color: #424B5A;
+	position: absolute;
+	z-index: 1;
+}
+
+.top {
+	top: var(--dot-position)
+}
+
+.right {
+	right: var(--dot-position)
+}
+
+.bottom {
+	bottom: var(--dot-position)
+}
+
+.left {
+	left: var(--dot-position)
+}
+
+.CellPadding-top {
+	height: var(--padding-size);
+	top: var(--padding-position);
+	left: 0;
+	right: 0;
+	position: absolute;
+	background-color: var(--color-border);
+}
+.CellPadding-right {
+	width: var(--padding-size);
+	right: var(--padding-position);
+	top: 0;
+	bottom: 0;
+	position: absolute;
+	background-color: var(--color-border);
+}
+.CellPadding-bottom {
+	height: var(--padding-size);
+	bottom: var(--padding-position);
+	left: 0;
+	right: 0;
+	position: absolute;
+	background-color: var(--color-border);
+}
+.CellPadding-left {
+	width: var(--padding-size);
+	left: var(--padding-position);
+	top: 0;
+	bottom: 0;
+	position: absolute;
+	background-color: var(--color-border);
+}
+
+.GridContainer button:focus {
+	outline: none;
+} */
