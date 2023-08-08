@@ -1,7 +1,7 @@
-import '../css/LazyHashedImage.css';
-
 import { useState, useEffect, useRef } from 'react';
 import { Blurhash } from "react-blurhash";
+
+import '../css/LazyHashedImage.css';
 
 const useImageLoaded = () => {
 	const [loaded, setLoaded] = useState(false)

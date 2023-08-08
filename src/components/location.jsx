@@ -4,14 +4,14 @@ import ShoppingCartOutlinedIcon from '@mui/icons-material/ShoppingCartOutlined';
 import PlaceIcon from '@mui/icons-material/Place';
 import CloseIcon from '@mui/icons-material/Close';
 
-import { useCallback, useContext, useEffect, useRef, useState } from 'react';
-import { useRive, useStateMachineInput } from '@rive-app/react-canvas';
+import { useEffect, useRef, useState } from 'react';
+import { createRoot } from 'react-dom/client';
+import { useRive } from '@rive-app/react-canvas';
 import { Wrapper } from "@googlemaps/react-wrapper";
 import { AnimatePresence, motion } from "framer-motion"
 
 
 import styles from '../css/Map.module.css';
-import { createRoot } from 'react-dom/client';
 
 export default function Location() {
 	return (

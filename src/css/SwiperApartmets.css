@@ -22,7 +22,7 @@
 	top: calc(var(--height) - 2px);
 }
 
-::slotted(.container-start) {
+::slotted(.containerStart) {
 	display: flex;
 	justify-content: space-evenly;
 	align-items: center;

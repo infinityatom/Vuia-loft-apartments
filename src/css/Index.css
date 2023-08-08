@@ -40,6 +40,13 @@
 	--padding-default: 5vw;
 	--gap-default: 2vw;
 	--border-radius: 3px;
+
+
+	--padding1: 5vw;
+	--gap1: 2vw;
+	--some-small-padding: 7vw;
+	--some-small-padding2: 3.5vw;
+	--some-padding: 4rem;
 }
 
 body {

@@ -1,11 +1,11 @@
 import * as Dialog from '@radix-ui/react-dialog';
 import { Cross2Icon } from '@radix-ui/react-icons';
-import DataApartments from '../data/DataApartments.json';
 import { useEffect, useRef } from 'react';
 
-import '../css/Apartments.css';
-import '../css/ApartmentsDialog.css';
 import SwiperApartmetsStyle from '../css/SwiperApartmets.css?inline';
+import styles from '../css/Apartments.module.css';
+
+import DataApartments from '../data/DataApartments.json';
 
 export default function Apartments() {
 	const swiperRef = useRef(null);
@@ -35,10 +35,10 @@ export default function Apartments() {
 	}, []);
 
 	return (
-		<section className='Apartments'>
+		<section className={styles.Apartments}>
 			<h1>Apartments</h1>
 			<swiper-container init="false" ref={swiperRef}>
-				<div slot="container-start" className='container-start'>
+				<div slot="container-start" className='containerStart'>
 					<span>2 camere</span>
 					<span>3 camere</span>
 					<span>garsoniera</span>
@@ -48,7 +48,7 @@ export default function Apartments() {
 						<swiper-slide key={apartment.tip_apartament} >
 							<Dialog.Root>
 
-								<Dialog.Trigger className='DialogTrigger'>
+								<Dialog.Trigger className={styles.DialogTrigger}>
 									<img src={apartment.imgs[0]} />
 									<h4>{apartment.suprafata_utila} mp</h4>
 								</Dialog.Trigger>
@@ -67,11 +67,11 @@ export default function Apartments() {
 function DialogPortal({ apartment }) {
 	return (
 		<Dialog.Portal>
-			<Dialog.Overlay className='DialogOverlay' />
-			<Dialog.Content className='DialogContent'>
+			<Dialog.Overlay className={styles.DialogOverlay} />
+			<Dialog.Content className={styles.DialogContent}>
 				<DialogContentSwiper imgs={apartment.imgs} />
-				<Dialog.Title className='DialogTitle'>{apartment.tip_apartament}</Dialog.Title>
-				<Dialog.Description className='DialogDescription' asChild>
+				<Dialog.Title className={styles.DialogTitle}>{apartment.tip_apartament}</Dialog.Title>
+				<Dialog.Description className={styles.DialogDescription} asChild>
 					<ul>
 						<li>Etaj disponibilitate: {apartment.etaj_disponibilitate}</li>
 						<li>Suprafata utila: {apartment.suprafata_utila}</li>
@@ -86,7 +86,7 @@ function DialogPortal({ apartment }) {
 						<li>Hol mp: {apartment.hol_mp}</li>
 					</ul>
 				</Dialog.Description>
-				<Dialog.Close className='DialogClose' aria-label='Close'><Cross2Icon /></Dialog.Close>
+				<Dialog.Close className={styles.DialogClose} aria-label='Close'><Cross2Icon /></Dialog.Close>
 			</Dialog.Content>
 		</Dialog.Portal>
 	)

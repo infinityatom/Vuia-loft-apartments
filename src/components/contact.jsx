@@ -1,9 +1,8 @@
-
 import * as Form from '@radix-ui/react-form';
 import { useState, useRef } from 'react';
 import { Select, SelectItem } from './select_simplified';
 
-import '../css/Contact.css';
+import style from '../css/Contact.module.css';
 
 export default function Contact() {
 	const [count, setCount] = useState(0);
@@ -48,9 +47,9 @@ export default function Contact() {
 	}
 
 	return (
-		<section className='Contact'>
+		<section className={style.Contact}>
 			<h1>Contact</h1>
-			<div className='Info'>
+			<div className={style.Info}>
 				<h2>Pentru mai multe detalii nu ezitati sa ne contactati prin email sau telefon</h2>
 				<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quos laboriosam hic ratione consequatur illum inventore! Magni porro quis minus, soluta ullam fugiat in ut doloremque.</p>
 				<p>Telefon: <span>0742 750 680</span></p>
@@ -62,36 +61,36 @@ export default function Contact() {
 				action='https://sendemail-uvzllxrx4a-uc.a.run.app'
 				method='post'
 				onSubmit={onSubmit}
-				className='ContactForm'
+				className={style.ContactForm}
 			>
-				<Form.Field className='Field Name' name='name'>
-					<div className="FieldHead">
-						<Form.Label className='FieldLabel'>Prenume</Form.Label>
-						<Form.Message className='FieldWarning' match='valueMissing'>Va rog sa-mi dati un nume</Form.Message>
+				<Form.Field className={`${style.Field} ${style.Name}`} name='name'>
+					<div className={style.FieldHead}>
+						<Form.Label className={style.FieldLabel}>Prenume</Form.Label>
+						<Form.Message className={style.FieldWarning} match='valueMissing'>Va rog sa-mi dati un nume</Form.Message>
 					</div>
 					<Form.Control type='text' required placeholder='Prenume' />
 				</Form.Field>
 
-				<Form.Field className='Field Email' name='email'>
-					<div className="FieldHead">
-						<Form.Label className='FieldLabel'>Email</Form.Label>
-						<Form.Message className='FieldWarning' match='valueMissing'>Please enter your email</Form.Message>
-						<Form.Message className='FieldWarning' match='typeMismatch'>Please provide a valid email</Form.Message>
+				<Form.Field className={`${style.Field} ${style.Email}`} name='email'>
+					<div className={style.FieldHead}>
+						<Form.Label className={style.FieldLabel}>Email</Form.Label>
+						<Form.Message className={style.FieldWarning} match='valueMissing'>Please enter your email</Form.Message>
+						<Form.Message className={style.FieldWarning} match='typeMismatch'>Please provide a valid email</Form.Message>
 					</div>
 					<Form.Control type='email' required placeholder='example@example.com' />
 				</Form.Field>
 
-				<Form.Field className='Field Phone' name='phone'>
-					<div className="FieldHead">
-						<Form.Label className='FieldLabel'>Telefon</Form.Label>
-						<Form.Message className='FieldWarning' match='typeMismatch'>Acest numar nu este valid</Form.Message>
+				<Form.Field className={`${style.Field} ${style.Phone}`} name='phone'>
+					<div className={style.FieldHead}>
+						<Form.Label className={style.FieldLabel}>Telefon</Form.Label>
+						<Form.Message className={style.FieldWarning} match='typeMismatch'>Acest numar nu este valid</Form.Message>
 					</div>
 					<Form.Control type='tel' required placeholder='tel' />
 				</Form.Field>
 
-				<Form.Field className='Field Subject' name='subject'>
-					<div className="FieldHead">
-						<Form.Message className='FieldWarning' match='valueMissing'>Selectati un subiect</Form.Message>
+				<Form.Field className={`${style.Field} ${style.Subject}`} name='subject'>
+					<div className={style.FieldHead}>
+						<Form.Message className={style.FieldWarning} match='valueMissing'>Selectati un subiect</Form.Message>
 					</div>
 					<Form.Control asChild>
 						<Select
@@ -107,11 +106,11 @@ export default function Contact() {
 					</Form.Control>
 				</Form.Field>
 
-				<Form.Field className='Field Message' name='message'>
-					<div className="FieldHead">
-						<Form.Label className='FieldLabel'>Puneti o intrebare</Form.Label>
-						<Form.Message className='FieldWarning' match='valueMissing'>Nu uitati sa scrieti intrebarea dumneavoastra in patratica de mai jos</Form.Message>
-						<Form.Message className='FieldWarning' match='tooShort'>Va rugam sa puneti o intrebare mai amplacare sa contina cel putin 25 de litere</Form.Message>
+				<Form.Field className={`${style.Field} ${style.Message}`} name='message'>
+					<div className={style.FieldHead}>
+						<Form.Label className={style.FieldLabel}>Puneti o intrebare</Form.Label>
+						<Form.Message className={style.FieldWarning} match='valueMissing'>Nu uitati sa scrieti intrebarea dumneavoastra in patratica de mai jos</Form.Message>
+						<Form.Message className={style.FieldWarning} match='tooShort'>Va rugam sa puneti o intrebare mai amplacare sa contina cel putin 25 de litere</Form.Message>
 					</div>
 					<Form.Control type='text' asChild>
 						<textarea
@@ -126,7 +125,7 @@ export default function Contact() {
 					<span id='contact_counter' aria-live="polite">{count}/512</span>
 				</Form.Field>
 
-				<Form.Submit className='Submit' onClick={submitClicked}>
+				<Form.Submit className={style.Submit} onClick={submitClicked}>
 					Pune o intrebare
 				</Form.Submit>
 			</Form.Root>

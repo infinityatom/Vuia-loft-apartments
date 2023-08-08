@@ -41,15 +41,14 @@ export default function Index() {
 function Content() {
 	return (
 		<>
-			{/* <Header /> */}
+			<Header />
 			<Suspense>
-				{/* <PhotoLibrary /> */}
-				{/* <Apartments /> */}
-				{/* <Location /> */}
-				{/* <Questions /> */}
-				{/* <About /> */}
-				{/* <Contact /> */}
-				{/* <Footer /> */}
+				<PhotoLibrary />
+				<Apartments />
+				<Location />
+				<Questions />
+				<Contact />
+				<Footer />
 			</Suspense>
 		</>
 	)

@@ -3,24 +3,24 @@ import * as Accordion from '@radix-ui/react-accordion';
 import { ChevronDownIcon } from '@radix-ui/react-icons';
 
 import QAData from '../data/QAData.json';
-import '../css/Questions.css';
+import styles from '../css/Questions.module.css';
 
 
 export default function Questions() {
 
 	return (
-		<section className='Questions'>
+		<section className={styles.Questions}>
 			<h1>Intrebari</h1>
-			<Tabs.Root className='TabsRoot' defaultValue={QAData[0].categoryName} orientation="vertical">
+			<Tabs.Root className={styles.TabsRoot} defaultValue={QAData[0].categoryName} orientation="vertical">
 
-				<Tabs.List className='TabsList' aria-label="categori">
+				<Tabs.List className={styles.TabsList} aria-label="categori">
 					{QAData.map(({ categoryName }) => (
-						<Tabs.Trigger className='BorderButton' key={categoryName} value={categoryName}>{categoryName}</Tabs.Trigger>
+						<Tabs.Trigger className={styles.BorderButton} key={categoryName} value={categoryName}>{categoryName}</Tabs.Trigger>
 					))}
 				</Tabs.List>
 
 				{QAData.map(({ categoryName, questions }) => (
-					<Tabs.Content className='TabsContent' key={categoryName} value={categoryName}>
+					<Tabs.Content className={styles.TabsContent} key={categoryName} value={categoryName}>
 						<QAAccordion questions={questions}/>
 					</Tabs.Content>
 				))}
@@ -31,15 +31,15 @@ export default function Questions() {
 
 function QAAccordion({questions}) {
 	return (
-		<Accordion.Root className='QAAccordion' type='single' collapsible>
+		<Accordion.Root className={styles.QAAccordion} type='single' collapsible>
 			{questions.map(({ question, answer }) => (
-				<Accordion.Item className='QAAccordionItem' key={question} value={question}>
+				<Accordion.Item className={styles.QAAccordionItem} key={question} value={question}>
 
-					<Accordion.Header className='QAAccordionHeader'>
-						<Accordion.Trigger className='QAAccordionTrigger'>{question}</Accordion.Trigger>
+					<Accordion.Header className={styles.QAAccordionHeader}>
+						<Accordion.Trigger className={styles.QAAccordionTrigger}>{question}</Accordion.Trigger>
 					</Accordion.Header>
 
-					<Accordion.Content className='QAAccordionContent'>
+					<Accordion.Content className={styles.QAAccordionContent}>
 						<p>{answer}</p>
 					</Accordion.Content>
 

@@ -33,7 +33,6 @@ import { Gallery, GalleryImage, ImageCategory, LoopGallery } from '../js/gallery
 import FullScreenGallery from './full_screen_galery';
 import useHorizontalDrag from '../hooks/useHorizontalDrag';
 
-import '../css/Photo_library.css';
 import styles from '../css/PhotoLibrary.module.css';
 
 
@@ -81,7 +80,7 @@ export default function PhotoLibrary() {
 	}
 
 	return (
-		<section className='PhotoLibrary'>
+		<section className={styles.PhotoLibrary}>
 			{fullScreen != null &&
 				<FullScreenGallery images={images} initialSlide={fullScreen} categories={categories} changeCategory={changeCategory} currentCategory={category} exitFullScreen={exitFullScreen} />
 			}
@@ -148,7 +147,7 @@ function Slider4({ images, goFullScreen }) {
 
 	return (
 		<>
-			<div className='Slider' ref={containerRef}>
+			<div className={styles.Slider} ref={containerRef}>
 				<ParallaxProvider scrollAxis="horizontal" scrollContainer={scrollEl}>
 					{images.map((img, index) => {
 						return (
@@ -165,7 +164,7 @@ function Slider4({ images, goFullScreen }) {
 										scale: [0.75, 0.95],
 										easing: [0.75, 2, 0.47, 0.93],
 									}]}
-									className='ImageParallax'
+									className={styles.ImageParallax}
 									draggable='false'
 								/>
 							</motion.div>
@@ -173,7 +172,7 @@ function Slider4({ images, goFullScreen }) {
 					})}
 				</ParallaxProvider>
 			</div>
-			<div className="SliderViewFullLibrary">
+			<div className={styles.SliderViewFullLibrary}>
 				<button onClick={() => goFullScreen(0)}>Vezi toata galeria</button>
 			</div>
 		</>
@@ -184,8 +183,8 @@ function Grid({ images, categories, changeCategory, currentCategory, goFullScree
 	const [animationParent] = useAutoAnimate();
 
 	return (
-		<div className="Grid">
-			<div className='GridCategory'>
+		<div className={styles.Grid}>
+			<div className={styles.GridCategory}>
 				<button
 					onClick={(e) => changeCategory(e, null)}
 					data-active={currentCategory == null}
@@ -204,7 +203,7 @@ function Grid({ images, categories, changeCategory, currentCategory, goFullScree
 				)}
 			</div>
 
-			<div className='GridImages' ref={animationParent}>
+			<div className={styles.GridImages} ref={animationParent}>
 				{images.map((img, index) =>
 					<motion.button
 						key={img.url}
