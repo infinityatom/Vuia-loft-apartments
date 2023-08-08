@@ -43,13 +43,13 @@ function Content() {
 		<>
 			{/* <Header /> */}
 			<Suspense>
-				<PhotoLibrary />
-				{/* <Apartments />
-			<Location />
-			<Questions />
-			<About />
-			<Contact />
-			<Footer /> */}
+				{/* <PhotoLibrary /> */}
+				{/* <Apartments /> */}
+				{/* <Location /> */}
+				{/* <Questions /> */}
+				{/* <About /> */}
+				{/* <Contact /> */}
+				{/* <Footer /> */}
 			</Suspense>
 		</>
 	)
