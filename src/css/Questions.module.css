@@ -21,7 +21,7 @@
 	border-bottom-color: #979797;
 }
 
-.BorderButton:hover {
+.BorderButton:hover, .BorderButton[aria-selected="true"] {
 	background-color: #424B5A;
 	color: white;
 }
@@ -36,9 +36,11 @@
 
 .TabsList {
 	display: flex;
+	flex-wrap: wrap;
 	justify-content: center;
 	gap: var(--gap1);
 	margin: 0 var(--padding1);
+	margin-bottom: 50px;
 }
 
 

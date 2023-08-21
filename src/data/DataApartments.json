@@ -1,129 +1,342 @@
 [
 	{
-		"tip_apartament": "Apartament tip A",
-		"etaj_disponibilitate": [
-			2,
-			3,
-			4
+		"tip_apartament": "Apartament tip 1",
+		"nr_aparatament": [
+			12,
+			26,
+			38,
+			50
 		],
-		"suprafata_utila": 42,
-		"suprafata_construita": 0,
-		"pret_imobil": 0,
-		"pret_pe_mp": 0,
-		"domitor_1_mp": 0,
-		"domitor_2_mp": 0,
-		"baie_1_mp": 0,
-		"baie_2_mp": 0,
-		"terasa_mp": 0,
-		"hol_mp": 0,
-		"imgs": [
-			"https://www.cadpro.com/wp-content/uploads/2018/03/Popular-Apartment-Floor-Plan-Designs.png"
+		"suprafata_utila": 38.5,
+		"suprafata_construita": 45.3,
+		"img": "/png/ap1.png",
+		"suprafete": [
+			{
+				"name": "living",
+				"size": 12.9
+			},
+			{
+				"name": "bucatarie",
+				"size": 7.3
+			},
+			{
+				"name": "dormitor",
+				"size": 11.5
+			},
+			{
+				"name": "hol",
+				"size": 2.1
+			},
+			{
+				"name": "baie",
+				"size": 4.3
+			},
+			{
+				"name": "logie",
+				"size": 6.3
+			}
 		]
 	},
 	{
-		"tip_apartament": "Apartament tip B",
-		"etaj_disponibilitate": [
-			2,
-			3,
-			4
+		"tip_apartament": "Apartament tip 2",
+		"nr_aparatament": [
+			1
 		],
-		"suprafata_utila": 73,
-		"suprafata_construita": 0,
-		"pret_imobil": 0,
-		"pret_pe_mp": 0,
-		"domitor_1_mp": 0,
-		"domitor_2_mp": 0,
-		"baie_1_mp": 0,
-		"baie_2_mp": 0,
-		"terasa_mp": 0,
-		"hol_mp": 0,
-		"imgs": [
-			"https://www.apartments.com/images/librariesprovider2/default-album/apartment-floor-plan-nantucket-apartments-madison-wi.jpg?sfvrsn=bf7f4c04_0",
-			"https://thumbs.dreamstime.com/z/apartment-plan-blueprint-shoot-house-isolated-92293108.jpg"
+		"suprafata_utila": 44.20,
+		"suprafata_construita": 52.50,
+		"img": "/png/ap2.png",
+		"suprafete": [
+			{
+				"name": "living",
+				"size": 14.4
+			},
+			{
+				"name": "bucatarie",
+				"size": 10
+			},
+			{
+				"name": "dormitor",
+				"size": 13.4
+			},
+			{
+				"name": "hol",
+				"size": 1.2
+			},
+			{
+				"name": "baie",
+				"size": 5.2
+			},
+			{
+				"name": "terasa",
+				"size": 39
+			}
 		]
 	},
 	{
-		"tip_apartament": "C",
-		"etaj_disponibilitate": [
-			2,
-			3,
-			4
+		"tip_apartament": "Apartament tip 2a",
+		"nr_aparatament": [
+			27,
+			39
 		],
-		"suprafata_utila": 23,
-		"suprafata_construita": 0,
-		"pret_imobil": 0,
-		"pret_pe_mp": 0,
-		"domitor_1_mp": 0,
-		"domitor_2_mp": 0,
-		"baie_1_mp": 0,
-		"baie_2_mp": 0,
-		"terasa_mp": 0,
-		"hol_mp": 0,
-		"imgs": [
-			"https://www.apartments.com/images/librariesprovider2/default-album/apartment-floor-plan-nantucket-apartments-madison-wi.jpg?sfvrsn=bf7f4c04_0"
+		"suprafata_utila": 44.3,
+		"suprafata_construita": 52.5,
+		"img": "/png/ap3.png",
+		"suprafete": [
+			{
+				"name": "living",
+				"size": 14.4
+			},
+			{
+				"name": "bucatarie",
+				"size": 10
+			},
+			{
+				"name": "dormitor",
+				"size": 13.4
+			},
+			{
+				"name": "hol",
+				"size": 1.3
+			},
+			{
+				"name": "baie",
+				"size": 5.2
+			},
+			{
+				"name": "terasa",
+				"size": 6.8
+			}
 		]
 	},
 	{
-		"tip_apartament": "D",
-		"etaj_disponibilitate": [
-			2,
-			3,
-			4
+		"tip_apartament": "Apartament tip 3",
+		"nr_aparatament": [
+			1
 		],
-		"suprafata_utila": 45,
-		"suprafata_construita": 0,
-		"pret_imobil": 0,
-		"pret_pe_mp": 0,
-		"domitor_1_mp": 0,
-		"domitor_2_mp": 0,
-		"baie_1_mp": 0,
-		"baie_2_mp": 0,
-		"terasa_mp": 0,
-		"hol_mp": 0,
-		"imgs": [
-			"https://vantageonthepark.com/wp-content/uploads/1A-ADA-1-bed-1-bath-690.jpg"
+		"suprafata_utila": 51.9,
+		"suprafata_construita": 62.8,
+		"img": "/png/ap4.png",
+		"suprafete": [
+			{
+				"name": "living",
+				"size": 12.1
+			},
+			{
+				"name": "bucatarie",
+				"size": 10
+			},
+			{
+				"name": "dormitor",
+				"size": 11.3
+			},
+			{
+				"name": "dormitor",
+				"size": 8.4
+			},
+			{
+				"name": "hol",
+				"size": 1.2
+			},
+			{
+				"name": "baie",
+				"size": 5.7
+			},
+			{
+				"name": "baie",
+				"size": 2.85
+			},
+			{
+				"name": "terasa",
+				"size": 59.1
+			}
 		]
 	},
 	{
-		"tip_apartament": "E",
-		"etaj_disponibilitate": [
-			2,
-			3,
-			4
+		"tip_apartament": "Apartament tip 3a",
+		"nr_aparatament": [
+			28,
+			40
 		],
-		"suprafata_utila": 53,
-		"suprafata_construita": 0,
-		"pret_imobil": 0,
-		"pret_pe_mp": 0,
-		"domitor_1_mp": 0,
-		"domitor_2_mp": 0,
-		"baie_1_mp": 0,
-		"baie_2_mp": 0,
-		"terasa_mp": 0,
-		"hol_mp": 0,
-		"imgs": [
-			"https://i.pinimg.com/originals/1a/91/f2/1a91f210d454d8bbf576903df774a232.jpg"
+		"suprafata_utila": 51.9,
+		"suprafata_construita": 62.8,
+		"img": "/png/ap5.png",
+		"suprafete": [
+			{
+				"name": "living",
+				"size": 12.1
+			},
+			{
+				"name": "bucatarie",
+				"size": 10
+			},
+			{
+				"name": "dormitor",
+				"size": 11.3
+			},
+			{
+				"name": "dormitor",
+				"size": 8.4
+			},
+			{
+				"name": "hol",
+				"size": 1.2
+			},
+			{
+				"name": "baie",
+				"size": 5.7
+			},
+			{
+				"name": "baie",
+				"size": 2.85
+			},
+			{
+				"name": "terasa",
+				"size": 15.6
+			}
 		]
 	},
 	{
-		"tip_apartament": "F",
-		"etaj_disponibilitate": [
-			2,
-			3,
-			4
+		"tip_apartament": "Apartament tip 4",
+		"nr_aparatament": [
+			9
 		],
-		"suprafata_utila": 94,
-		"suprafata_construita": 0,
-		"pret_imobil": 0,
-		"pret_pe_mp": 0,
-		"domitor_1_mp": 0,
-		"domitor_2_mp": 0,
-		"baie_1_mp": 0,
-		"baie_2_mp": 0,
-		"terasa_mp": 0,
-		"hol_mp": 0,
-		"imgs": [
-			"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS-fucPlXAtCXB1l3liSOxIuJer_gF2bwBEsA5m8EDf7BtDPLbndROW0ObZJOk4wp2UxAs&usqp=CAU"
+		"suprafata_utila": 48.6,
+		"suprafata_construita": 55.1,
+		"img": "/png/ap6.png",
+		"suprafete": [
+			{
+				"name": "living",
+				"size": 16.8
+			},
+			{
+				"name": "bucatarie",
+				"size": 10.4
+			},
+			{
+				"name": "dormitor",
+				"size": 11.8
+			},
+			{
+				"name": "hol",
+				"size": 4
+			},
+			{
+				"name": "baie",
+				"size": 5.6
+			},
+			{
+				"name": "balcon",
+				"size": 11.4
+			}
+		]
+	},
+	{
+		"tip_apartament": "Apartament tip 4a",
+		"nr_aparatament": [
+			23,
+			35
+		],
+		"suprafata_utila": 51.2,
+		"suprafata_construita": 57.8,
+		"img": "/png/ap7.png",
+		"suprafete": [
+			{
+				"name": "living",
+				"size": 16.8
+			},
+			{
+				"name": "bucatarie",
+				"size": 10.4
+			},
+			{
+				"name": "dormitor",
+				"size": 14.4
+			},
+			{
+				"name": "hol",
+				"size": 4
+			},
+			{
+				"name": "baie",
+				"size": 5.6
+			},
+			{
+				"name": "balcon",
+				"size": 9
+			}
+		]
+	},
+	{
+		"tip_apartament": "Apartament tip 4b",
+		"nr_aparatament": [
+			47
+		],
+		"suprafata_utila": 51.6,
+		"suprafata_construita": 58.6,
+		"img": "/png/ap8.png",
+		"suprafete": [
+			{
+				"name": "living",
+				"size": 19.8
+			},
+			{
+				"name": "bucatarie",
+				"size": 10.4
+			},
+			{
+				"name": "dormitor",
+				"size": 11.8
+			},
+			{
+				"name": "hol",
+				"size": 4
+			},
+			{
+				"name": "baie",
+				"size": 5.6
+			},
+			{
+				"name": "balcon",
+				"size": 8.5
+			}
+		]
+	},
+	{
+		"tip_apartament": "Apartament tip 5",
+		"nr_aparatament": [
+			10,
+			24,
+			36,
+			48
+		],
+		"suprafata_utila": 57.3,
+		"suprafata_construita": 66.4,
+		"img": "/png/ap9.png",
+		"suprafete": [
+			{
+				"name": "living",
+				"size": 24.6
+			},
+			{
+				"name": "bucatarie",
+				"size": 12.7
+			},
+			{
+				"name": "dormitor",
+				"size": 11.8
+			},
+			{
+				"name": "hol",
+				"size": 3.3
+			},
+			{
+				"name": "baie",
+				"size": 4.9
+			},
+			{
+				"name": "balcon",
+				"size": 5.5
+			}
 		]
 	}
 ]

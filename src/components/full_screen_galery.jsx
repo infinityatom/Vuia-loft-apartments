@@ -3,10 +3,24 @@ import { useEffect, useRef } from 'react';
 
 import styles from '../css/FullScreenGallery.module.css'
 import { motion, AnimatePresence } from "framer-motion"
+import CloseIcon from '@mui/icons-material/Close';
 
 export default function FullScreenGallery({ images, categories, changeCategory, currentCategory, exitFullScreen, initialSlide }) {
 	const swiperRef = useRef(null);
 	const thumbnailRef = useRef(null);
+
+	useEffect(() => {
+		function win_onkeydown_handler(event) {
+			if (event.key === 'Escape') {
+				event.returnValue = false;
+				exitFullScreen();
+			}
+		}
+
+		document.addEventListener('keydown', win_onkeydown_handler);
+
+		return () => { document.removeEventListener('keydown', win_onkeydown_handler) };
+	}, []);
 
 	useEffect(() => {
 		const swiperContainer = swiperRef.current;
@@ -41,22 +55,66 @@ export default function FullScreenGallery({ images, categories, changeCategory, 
 
 		swiperContainer.initialize();
 		swiperThumbnail.initialize();
-	}, [initialSlide]);
+	}, [initialSlide, categories]);
+
+	// useEffect(() => {
+	// 	const swiperContainer = swiperRef.current;
+	// 	const swiperThumbnail = thumbnailRef.current;
+
+	// 	swiperContainer.
+	// }, [initialSlide]);
 
 	return (
 		<div className={styles.FullScreenGallery}>
+			<div className={styles.Overlay} />
+
+			<div className={styles.heading}>
+				<div className={styles.Spacer} />
+
+				<div className={styles.Category}>
+					<motion.button
+						onClick={(e) => changeCategory(e, null)}
+						data-active={currentCategory == null}
+						layoutId={'seeAllCategory'}
+					>
+						Vezi tot
+					</motion.button>
+
+					{categories.map(({ name }) =>
+						<motion.button
+							key={name}
+							onClick={(e) => changeCategory(e, name)}
+							data-active={currentCategory == name}
+							layoutId={name}
+						>
+							{name}
+						</motion.button>
+					)}
+				</div>
+
+				<button
+					className={styles.ExitButton}
+					type="button"
+					onClick={exitFullScreen}
+				>
+					<CloseIcon />
+				</button>
+			</div>
+
+
 			<swiper-container
 				class={styles.container}
 				ref={swiperRef} init="false"
 				controller-control={'.' + styles.thumbnail}
 			>
 				{images.map((img) =>
-					<swiper-slide key={img.url}
-					onClick={event => {
-						if (event.target.tagName != 'IMG') {
-							exitFullScreen();
-						}
-					}}
+					<swiper-slide
+						key={img.url}
+						onClick={event => {
+							if (event.target.tagName != 'IMG') {
+								exitFullScreen();
+							}
+						}}
 					>
 						<div className="swiper-zoom-container">
 							<motion.img

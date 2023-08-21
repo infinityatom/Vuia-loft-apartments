@@ -5,7 +5,16 @@
 	padding: 0;
 	display: grid;
 	border: none;
+	border-radius: 5px;
+	overflow: hidden;
 	grid-template: 'container';
+	/* padding: 2px; */
+
+	box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+}
+
+.DialogInfo {
+	/* display: none; */
 }
 
 .DialogTrigger>* {
@@ -21,8 +30,12 @@
 .DialogTrigger>h4 {
 	color: black;
 	place-self: end center;
-	background-color: rgba(255, 255, 255, 0.356);
-	backdrop-filter: blur(2px);
+
+	background: rgba(34,115,222,0.35);
+	-webkit-backdrop-filter: blur(10px);
+	backdrop-filter: blur(3px);
+	border: 2px solid rgba(34,115,222,0.175);
+
 	margin: 0;
 	margin-bottom: 1rem;
 	padding: 1rem;
@@ -32,14 +45,20 @@
 
 .Apartments swiper-container {
 	width: 100vw;
-	background-color: aliceblue;
 }
 
 .Apartments swiper-slide {
-	padding: 20px 0;
-	height: 500px;
+	padding: 20px 30px;
+	height: 450px;
+	width: 300px;
 }
 
+.floatingDiv {
+	position: absolute;
+	left: 20px;
+	margin-top: 0px;
+	color: #505D68;
+}
 
 .DialogOverlay {
 	background-color: rgba(0, 0, 0, 0.299);
@@ -68,11 +87,11 @@
 	left: 50%;
 	transform: translate(-50%, -50%);
 	width: 90vw;
-	max-width: 450px;
-	max-height: 85vh;
 	padding: 25px;
 	animation: contentShow 150ms cubic-bezier(0.16, 1, 0.3, 1);
-	z-index: 2;
+	z-index: 7;
+	max-width: 100%;
+	max-height: 100%;
 }
 
 .DialogContent:focus {
@@ -107,13 +126,30 @@
 }
 
 .DialogClose {
-	display: none;
+	padding: 5px;
+	margin: 0;
 }
 
+.DialogView3D {
+	padding: 0;
+	margin: 0;
+}
+
+.DialogClose > * {
+	width: 80px;
+	height: 80px;
+}
+
+.DialogView3D > svg {
+	width: 80px;
+	height: 80px;
+}
+
+
 .DialogContent swiper-container {
-	width: 300px;
-	height: 300px;
-	background-color: green;
+	width: 80dvw;
+	height: 80dvh;
+	/* background-color: green; */
 }
 
 .DialogContent swiper-slide>img {

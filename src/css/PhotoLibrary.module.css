@@ -1,5 +1,7 @@
 .PhotoLibrary {
-	background-color: darkgray;
+	/* background-color: darkgray; */
+	position: relative;
+	z-index: 5;
 	padding: 20px 0;
 	isolation: isolate;
 
@@ -21,6 +23,7 @@
 	gap: 20px;
 	padding: 20px 40px 20px 40px;
 
+
 	-ms-overflow-style: none;
 	scrollbar-width: none;
 
@@ -35,6 +38,7 @@
 	width: 60vw;
 	height: 60vh;
 	flex-shrink: 0;
+	
 }
 
 .ImageParallax {
@@ -163,11 +167,14 @@
 }
 
 .Slide>img {
-	width: 250px;
+	width: 14rem;
 	height: 70vh;
 	object-fit: cover;
 	object-position: center;
 	margin: 0 20px;
+
+	border-radius: 5px;
+	/* TODO padding */
 
 	user-drag: none;
 	user-select: none;

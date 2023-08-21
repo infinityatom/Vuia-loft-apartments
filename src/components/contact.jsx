@@ -65,7 +65,7 @@ export default function Contact() {
 			>
 				<Form.Field className={`${style.Field} ${style.Name}`} name='name'>
 					<div className={style.FieldHead}>
-						<Form.Label className={style.FieldLabel}>Prenume</Form.Label>
+						{/* <Form.Label className={style.FieldLabel}>Prenume</Form.Label> */}
 						<Form.Message className={style.FieldWarning} match='valueMissing'>Va rog sa-mi dati un nume</Form.Message>
 					</div>
 					<Form.Control type='text' required placeholder='Prenume' />
@@ -73,7 +73,7 @@ export default function Contact() {
 
 				<Form.Field className={`${style.Field} ${style.Email}`} name='email'>
 					<div className={style.FieldHead}>
-						<Form.Label className={style.FieldLabel}>Email</Form.Label>
+						{/* <Form.Label className={style.FieldLabel}>Email</Form.Label> */}
 						<Form.Message className={style.FieldWarning} match='valueMissing'>Please enter your email</Form.Message>
 						<Form.Message className={style.FieldWarning} match='typeMismatch'>Please provide a valid email</Form.Message>
 					</div>
@@ -82,7 +82,7 @@ export default function Contact() {
 
 				<Form.Field className={`${style.Field} ${style.Phone}`} name='phone'>
 					<div className={style.FieldHead}>
-						<Form.Label className={style.FieldLabel}>Telefon</Form.Label>
+						{/* <Form.Label className={style.FieldLabel}>Telefon</Form.Label> */}
 						<Form.Message className={style.FieldWarning} match='typeMismatch'>Acest numar nu este valid</Form.Message>
 					</div>
 					<Form.Control type='tel' required placeholder='tel' />
@@ -108,7 +108,7 @@ export default function Contact() {
 
 				<Form.Field className={`${style.Field} ${style.Message}`} name='message'>
 					<div className={style.FieldHead}>
-						<Form.Label className={style.FieldLabel}>Puneti o intrebare</Form.Label>
+						{/* <Form.Label className={style.FieldLabel}>Puneti o intrebare</Form.Label> */}
 						<Form.Message className={style.FieldWarning} match='valueMissing'>Nu uitati sa scrieti intrebarea dumneavoastra in patratica de mai jos</Form.Message>
 						<Form.Message className={style.FieldWarning} match='tooShort'>Va rugam sa puneti o intrebare mai amplacare sa contina cel putin 25 de litere</Form.Message>
 					</div>
@@ -122,7 +122,7 @@ export default function Contact() {
 							aria-describedby='contact_counter'
 						/>
 					</Form.Control>
-					<span id='contact_counter' aria-live="polite">{count}/512</span>
+					{/* <span id='contact_counter' aria-live="polite">{count}/512</span> */}
 				</Form.Field>
 
 				<Form.Submit className={style.Submit} onClick={submitClicked}>

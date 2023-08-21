@@ -10,6 +10,7 @@
 	height: 100%;
 	filter: blur(0px);
 	position: absolute;
+	object-fit: cover;
 	transition: filter 1000ms ease;
 }
 

@@ -1,11 +1,35 @@
 import * as Dialog from '@radix-ui/react-dialog';
 import { Cross2Icon } from '@radix-ui/react-icons';
-import { useEffect, useRef } from 'react';
+import { useEffect, useRef, useState } from 'react';
 
 import SwiperApartmetsStyle from '../css/SwiperApartmets.css?inline';
 import styles from '../css/Apartments.module.css';
 
 import DataApartments from '../data/DataApartments.json';
+
+import Spline from '@splinetool/react-spline';
+
+const SplineObjects = [
+	'/spline/ap_1_e_12_e_26_e_38_e_50.spline',
+	'/spline/ap_2_a_e_27_e_39.spline',
+	'/spline/ap_2_e_1.spline',
+	'/spline/ap_3_a_e_28_e_40.spline',
+	'/spline/ap_3_e_2.spline',
+	'/spline/ap_4_a_e_23_e_35.spline',
+	'/spline/ap_4_b_e_47.spline',
+	'/spline/ap_4_e_9.spline',
+	'/spline/ap_5_e_10_e_24_e_36_e_48.spline',
+];
+
+// {SplineObjects.map(item =>
+// 	<div key={item} style={{
+// 		width: '80vw',
+// 		height: '80vh',
+// 		backgroundColor: 'red',
+// 	}}>
+// 		<Spline scene={item} />
+// 	</div>
+// )}
 
 export default function Apartments() {
 	const swiperRef = useRef(null);
@@ -19,8 +43,8 @@ export default function Apartments() {
 			scrollbar: {
 				draggable: true,
 			},
-			centeredSlides: true,
-			slidesPerView: 3,
+			// centeredSlides: true,
+			slidesPerView: 'auto',
 			keyboard: true,
 			freeMode: {
 				enabled: true,
@@ -36,24 +60,26 @@ export default function Apartments() {
 
 	return (
 		<section className={styles.Apartments}>
-			<h1>Apartments</h1>
 			<swiper-container init="false" ref={swiperRef}>
 				<div slot="container-start" className='containerStart'>
-					<span>2 camere</span>
+					<div className={styles.floatingDiv}>
+						<h1>Apartments</h1>
+					</div>
+					{/* <span>2 camere</span>
 					<span>3 camere</span>
-					<span>garsoniera</span>
+					<span>garsoniera</span> */}
 				</div>
-				{DataApartments.map(apartment => {
+				{DataApartments.map((apartment, index) => {
 					return (
 						<swiper-slide key={apartment.tip_apartament} >
 							<Dialog.Root>
 
 								<Dialog.Trigger className={styles.DialogTrigger}>
-									<img src={apartment.imgs[0]} />
+									<img src={apartment.img} />
 									<h4>{apartment.suprafata_utila} mp</h4>
 								</Dialog.Trigger>
 
-								<DialogPortal apartment={apartment} />
+								<DialogPortal apartment={apartment} index={index} />
 
 							</Dialog.Root>
 						</swiper-slide>
@@ -64,42 +90,57 @@ export default function Apartments() {
 	)
 }
 
-function DialogPortal({ apartment }) {
+import ThreeDRotationIcon from '@mui/icons-material/ThreeDRotation';
+
+function DialogPortal({ apartment, index }) {
+	const [show3D, set3D] = useState(false);
+
+
 	return (
 		<Dialog.Portal>
 			<Dialog.Overlay className={styles.DialogOverlay} />
 			<Dialog.Content className={styles.DialogContent}>
-				<DialogContentSwiper imgs={apartment.imgs} />
-				<Dialog.Title className={styles.DialogTitle}>{apartment.tip_apartament}</Dialog.Title>
-				<Dialog.Description className={styles.DialogDescription} asChild>
-					<ul>
-						<li>Etaj disponibilitate: {apartment.etaj_disponibilitate}</li>
-						<li>Suprafata utila: {apartment.suprafata_utila}</li>
-						<li>Suprafata construita: {apartment.suprafata_construita}</li>
-						<li>Pret imobil: {apartment.pret_imobil}</li>
-						<li>Pret pe mp: {apartment.pret_pe_mp}</li>
-						<li>Domitor 1 mp: {apartment.domitor_1_mp}</li>
-						<li>Domitor 2 mp: {apartment.domitor_2_mp}</li>
-						<li>Baie 1 mp: {apartment.baie_1_mp}</li>
-						<li>Baie 2 mp: {apartment.baie_2_mp}</li>
-						<li>Terasa mp: {apartment.terasa_mp}</li>
-						<li>Hol mp: {apartment.hol_mp}</li>
-					</ul>
-				</Dialog.Description>
-				<Dialog.Close className={styles.DialogClose} aria-label='Close'><Cross2Icon /></Dialog.Close>
+				<DialogContentSwiper img={apartment.img} splineURL={SplineObjects[index]} apartment={apartment} />
+				{/* <div style={{
+						width: '80vw',
+						height: '80vh',
+						backgroundColor: 'red',
+					}}>
+						<Spline scene={SplineObjects[index]} />
+					</div> */}
+
+				{/* <button className={styles.DialogView3D}><ThreeDRotationIcon className={styles.threeDIcon} /></button>
+				<Dialog.Close className={styles.DialogClose} aria-label='Close'><Cross2Icon /></Dialog.Close> */}
+
+
 			</Dialog.Content>
-		</Dialog.Portal>
+		</Dialog.Portal >
 	)
 }
 
-function DialogContentSwiper({ imgs }) {
+function DialogContentSwiper({ img, splineURL, apartment }) {
 	return (
-		<swiper-container slides-per-view='1' mousewheel-force-to-axis='true' pagination keyboard loop >
-			{imgs.map(img =>
-				<swiper-slide key={img}>
-					<img src={img} />
-				</swiper-slide>
-			)}
+		<swiper-container slides-per-view='1' mousewheel-force-to-axis='true' pagination keyboard navigation>
+			<swiper-slide>
+				<img src={img} />
+			</swiper-slide>
+			<swiper-slide>
+				<Spline scene={splineURL} />
+			</swiper-slide>
+
+			<swiper-slide>
+				<div className={styles.DialogInfo}>
+					<Dialog.Title className={styles.DialogTitle}>{apartment.tip_apartament}</Dialog.Title>
+					<span>(Ap: {apartment.nr_aparatament.toString()})</span>
+					<ul>
+						{apartment.suprafete.map((item, index) =>
+							<li key={index}>{item.name} = {item.size}</li>
+						)}
+					</ul>
+					<span>Suprafata Construita {apartment.suprafata_utila} mp</span><br />
+					<span>Suprafata Utila {apartment.suprafata_construita} mp</span>
+				</div>
+			</swiper-slide>
 		</swiper-container>
 	);
 }

@@ -49,6 +49,10 @@
 	--some-padding: 4rem;
 }
 
+section {
+	margin: 150px 0;
+}
+
 body {
 	margin: 0;
 	padding: 0;

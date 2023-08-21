@@ -2,7 +2,7 @@
 	position: fixed;
 	width: 100vw;
 	height: 100vh;
-	z-index: 10;
+	z-index: 1;
 	isolation: isolate;
 	top: 0;
 	left: 0;
@@ -14,6 +14,65 @@
 	justify-content: center;
 	align-items: center;
 	background-color: rgba(90, 140, 206, 0.471);
+}
+
+.heading {
+	background-color: rgba(166, 166, 166, 0.254);
+	position: absolute;
+	top: 0;
+	width: 100%;
+	z-index: 3;
+	display: flex;
+	justify-content: space-around;
+	padding: 1vw 10px; /* TODO padding here */
+}
+
+
+.ExitButton {
+	padding: 0;
+	margin: 0;
+	border: 0;
+	background-color: white;
+	padding: 1vw 2vw;
+}
+
+.ExitButton>svg {
+	padding: 0;
+	margin: 0;
+}
+
+.Category {
+	display: flex;
+	gap: 10px;
+	background-color: white;
+	border-radius: 5px;
+	padding: 5px;
+}
+
+.Category>button {
+	background-color: transparent;
+	padding: 0;
+	margin: 0;
+	flex-basis: 100%;
+	text-align: center;
+	white-space: nowrap;
+	border-radius: 5px;
+	border: none;
+	padding: 1vw 2vw;
+	max-width: 150px;
+}
+
+.Category>button:hover {
+	background-color: #424b5a31;
+}
+
+.Category>button:focus {
+	outline: unset;
+}
+
+.Category>button[data-active="true"] {
+	background-color: #424B5A;
+	color: white;
 }
 
 .Overlay {
@@ -52,7 +111,7 @@
 	background-color: rgba(0, 0, 0, 0.203);
 	position: absolute;
 	bottom: 0;
-	z-index: 20;
+	z-index: 2;
 }
 
 .thumbnail>swiper-slide {

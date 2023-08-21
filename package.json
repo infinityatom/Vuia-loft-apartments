@@ -32,6 +32,8 @@
     "@react-spring/web": "^9.7.3",
     "@rive-app/react-canvas": "^3.0.54",
     "@sendgrid/mail": "^7.7.0",
+    "@splinetool/react-spline": "^2.2.6",
+    "@splinetool/runtime": "^0.9.425",
     "@use-gesture/react": "^10.2.27",
     "blurhash": "^2.0.5",
     "framer-motion": "^10.14.0",
