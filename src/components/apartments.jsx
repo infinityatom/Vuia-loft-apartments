@@ -102,7 +102,7 @@ function DialogPortal({ apartment, index }) {
 	)
 }
 
-
+import ThreeDRotationIcon from '@mui/icons-material/ThreeDRotation';
 
 function DialogContentSwiper({ img, splineURL, apartment }) {
 	return (
@@ -113,7 +113,6 @@ function DialogContentSwiper({ img, splineURL, apartment }) {
 				position: 'absolute',
 				top: 25,
 				right: 30,
-				// display: 'grid',
 			}}>
 				<CloseIcon style={{
 					width: '45px',
@@ -121,15 +120,38 @@ function DialogContentSwiper({ img, splineURL, apartment }) {
 					position: 'absolute',
 					top: 2.5,
 					right: 2.5,
-				}}/>
+				}} />
 			</Dialog.Close>
-			
+
 			<swiper-container slides-per-view='1' mousewheel-force-to-axis='true' pagination keyboard navigation>
 				<swiper-slide>
 					<img src={img} />
 				</swiper-slide>
 				<swiper-slide>
-					<Spline scene={splineURL} />
+					<div style={{
+						position: 'absolute',
+						textAlign: 'center',
+						width: '100%',
+						top: 35,
+						zIndex: 0,
+					}}>
+						<h5 style={{
+							display: 'inline-block',
+						}}>
+							<span>Puteti sa interactionati cu imaginea de mai jos</span>
+							<br/>
+							<span>Dati click sau cu doua degete puteti roti aparatamentul</span>
+						</h5>
+						<ThreeDRotationIcon style={{
+							width: '45px',
+							height: '45px',
+							display: 'inline-block',
+						}} />
+					</div>
+
+					<Spline scene={splineURL} style={{
+						zIndex: 100,
+					}}/>
 				</swiper-slide>
 
 				<swiper-slide>

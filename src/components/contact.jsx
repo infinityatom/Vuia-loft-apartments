@@ -52,7 +52,7 @@ export default function Contact() {
 			<div className={style.Info}>
 				<h2>Pentru mai multe detalii nu ezitati sa ne contactati prin email sau telefon</h2>
 				{/* <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quos laboriosam hic ratione consequatur illum inventore! Magni porro quis minus, soluta ullam fugiat in ut doloremque.</p> */}
-				<p>Telefon: <span>0742 750 680</span></p>
+				<p>Telefon: <a href="tel:0742750680">0742 750 680</a></p>
 			</div>
 
 
