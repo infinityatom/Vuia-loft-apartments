@@ -221,7 +221,7 @@ function Card({ exitCard }) {
 				{/* <span>Locatia este in apropiere de tot</span> */}
 			</p>
 			<p><DirectionsBusIcon className={styles.Icon} /><span>Centru Suceava - 5 min</span></p>
-			<p><SchoolIcon className={styles.Icon} /><span>Technical College Petru Muşat</span></p>
+			<p><SchoolIcon className={styles.Icon} /><span>Technical College Petru Muşat - 1 min</span></p>
 			<p><ShoppingCartOutlinedIcon className={styles.Icon} /><span>Iulius mall - 5 min</span></p>
 		</motion.div>
 	);
