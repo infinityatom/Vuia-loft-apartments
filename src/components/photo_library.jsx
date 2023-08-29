@@ -6,6 +6,7 @@ const testImages = [
 	new GalleryImage('./renders/building-5.jpg', ImageCategory.Randari),
 	new GalleryImage('./renders/building-6.jpg', ImageCategory.Randari),
 	new GalleryImage('./renders/building-7.jpg', ImageCategory.Randari),
+	new GalleryImage('./renders/building-8.jpeg', ImageCategory.Randari),
 
 	new GalleryImage('./images/picture1.jpg', ImageCategory.Poze),
 
@@ -153,28 +154,6 @@ function Grid({ images, categories, changeCategory, currentCategory, goFullScree
 
 			<div className={styles.GridImages} ref={animationParent}>
 				{images.map((img, index) => {
-					if (img.category == ImageCategory.PDF) {
-						return <motion.button
-							key={img.url}
-							onClick={() => goFullScreen(index)}
-							style={{
-								backgroundSize: 'cover',
-								padding: 0,
-							}}
-							layoutId={img.url}
-						>
-							<embed
-								src={img.url}
-								width="100%"
-								height="100%"
-								style={{
-									pointerEvents: "none",
-								}}
-								type="application/pdf"
-							/>
-						</motion.button>
-					}
-
 					return <motion.button
 						key={img.url}
 						onClick={() => goFullScreen(index)}

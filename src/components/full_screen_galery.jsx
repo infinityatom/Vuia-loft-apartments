@@ -2,7 +2,7 @@ import { useEffect, useRef } from 'react';
 
 
 import styles from '../css/FullScreenGallery.module.css'
-import { motion, AnimatePresence } from "framer-motion"
+import { motion } from "framer-motion"
 import CloseIcon from '@mui/icons-material/Close';
 
 export default function FullScreenGallery({ images, categories, changeCategory, currentCategory, exitFullScreen, initialSlide }) {
@@ -20,6 +20,7 @@ export default function FullScreenGallery({ images, categories, changeCategory, 
 		document.addEventListener('keydown', win_onkeydown_handler);
 
 		return () => { document.removeEventListener('keydown', win_onkeydown_handler) };
+	// eslint-disable-next-line react-hooks/exhaustive-deps
 	}, []);
 
 	useEffect(() => {
