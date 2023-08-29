@@ -2,8 +2,6 @@ import Rive from '@rive-app/react-canvas';
 import { motion, useScroll, useTransform } from "framer-motion"
 import { useEffect, useRef } from 'react';
 
-import imgBG from '../assets/images/Fronalpstock_big.jpg';
-import imgBuilding from '../assets/images/buildin_img.png';
 import riveSrc from '../assets/riv/vuia-loft-apartments-logo.riv?url';
 
 import style from '../css/Header.module.css';
@@ -21,7 +19,7 @@ export default function Header() {
 	});
 	// const { scrollY } = useScroll();
 
-	let buildingY = useTransform(scrollYProgress, [0, 1], ['0%', '20%']);
+	let buildingY = useTransform(scrollYProgress, [0, 1], ['0%', '10%']);
 	let logoY = useTransform(scrollYProgress, [0, 1], ['0%', '100%']);
 
 	const { rive, RiveComponent } = useRive({
@@ -43,7 +41,7 @@ export default function Header() {
 			{/* <LazyHashedImage src='https://upload.wikimedia.org/wikipedia/commons/3/3f/Fronalpstock_big.jpg' hash={hash} /> */}
 			<motion.img
 				className={style.imgBG}
-				src={imgBG}
+				src="./renders/BK6.png"
 				// style={{
 				// }}
 			/>
@@ -60,7 +58,7 @@ export default function Header() {
 			</motion.div>
 			<motion.img
 				className={style.imgBuilding}
-				src={imgBuilding}
+				src={'./renders/building-6.png'}
 				style={{
 					x: '-50%',
 					y: buildingY,

@@ -13,9 +13,8 @@ function groupBy(list, keyGetter) {
 }
 
 export const ImageCategory = {
-	Interior: 'Interior',
-	Exterior: 'Exterior',
-	Proiect: 'Proiect',
+	Randari: 'Randari',
+	PDF: 'pdfuri',
 }
 
 export const LoopGallery = {

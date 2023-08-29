@@ -1,18 +1,15 @@
 const testImages = [
-	new GalleryImage('https://images.unsplash.com/photo-1524781289445-ddf8f5695861?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1770&q=80', ImageCategory.Interior),
-	new GalleryImage('https://images.unsplash.com/photo-1610194352361-4c81a6a8967e?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1674&q=80', ImageCategory.Interior),
-	new GalleryImage('https://images.unsplash.com/photo-1618202133208-2907bebba9e1?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1770&q=80', ImageCategory.Exterior),
-	new GalleryImage('https://images.unsplash.com/photo-1495805442109-bf1cf975750b?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1770&q=80', ImageCategory.Exterior),
-	new GalleryImage('https://images.unsplash.com/photo-1548021682-1720ed403a5b?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1770&q=80', ImageCategory.Exterior),
-	new GalleryImage('https://images.unsplash.com/photo-1496753480864-3e588e0269b3?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2134&q=80', ImageCategory.Proiect),
-	new GalleryImage('https://images.unsplash.com/photo-1613346945084-35cccc812dd5?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1759&q=80', ImageCategory.Proiect),
-	new GalleryImage('https://images.unsplash.com/photo-1516681100942-77d8e7f9dd97?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1770&q=80', ImageCategory.Proiect),
-	new GalleryImage('https://encrypted-tbn1.gstatic.com/licensed-image?q=tbn:ANd9GcREj22c-wMNL5IDmU99v8G7voUl17Yxm0JJqMLqttdPT4DnaB99zqVK7HWiNzjP3aZnzCEf-ikAqb2yiDk', ImageCategory.Exterior),
-	new GalleryImage('https://www.daibau.ro/images/backgrounds/12/1small.jpg', ImageCategory.Interior),
-	new GalleryImage('https://iva.training/wp-content/uploads/2021/07/pov-arhitect.png', ImageCategory.Interior),
+	new GalleryImage('./renders/building-1.jpg', ImageCategory.Randari),
+	new GalleryImage('./renders/building-2.jpg', ImageCategory.Randari),
+	new GalleryImage('./renders/building-3.jpg', ImageCategory.Randari),
+	new GalleryImage('./renders/building-4.jpg', ImageCategory.Randari),
+	new GalleryImage('./renders/building-5.jpg', ImageCategory.Randari),
+	new GalleryImage('./renders/building-6.jpg', ImageCategory.Randari),
+	new GalleryImage('./renders/building-7.jpg', ImageCategory.Randari),
+	// new GalleryImage('./suprafete/DEMISOL.pdf', ImageCategory.PDF),
 ];
 
-import { useEffect, useState} from 'react';
+import { useEffect, useState } from 'react';
 import { useAutoAnimate } from '@formkit/auto-animate/react'
 import { motion } from "framer-motion"
 
@@ -85,14 +82,14 @@ export default function PhotoLibrary() {
 }
 
 function Slider({ images, goFullScreen, changeCategory }) {
-	const {containerRef, dragged} = useHorizontalDrag();
+	const { containerRef, dragged } = useHorizontalDrag();
 	// const [animationParent] = useAutoAnimate();
 	return (
 		<>
 			<div
 				className={styles.Slider}
 				ref={containerRef}
-				// ref={animationParent}
+			// ref={animationParent}
 			>
 				{images.map((img, index) => {
 					return (
@@ -147,16 +144,36 @@ function Grid({ images, categories, changeCategory, currentCategory, goFullScree
 			</div>
 
 			<div className={styles.GridImages} ref={animationParent}>
-				{images.map((img, index) =>
-					<motion.button
-						key={img.url}
-						onClick={() => goFullScreen(index)}
-						style={{
-							backgroundImage: `url(${img.url})`,
-							backgroundSize: 'cover',
-						}}
-						layoutId={img.url}
-					/>
+				{images.map((img, index) => {
+					if (img.category == ImageCategory.PDF) {
+						return <motion.button
+							key={img.url}
+							onClick={() => goFullScreen(index)}
+							style={{
+								backgroundSize: 'cover',
+							}}
+							layoutId={img.url}
+						>
+							<embed
+								key={img.url}
+								src="http://example.com/the.pdf"
+								width="100px"
+								height="100%"
+								type="application/pdf"
+							/>
+						</motion.button>
+					} else {
+						return <motion.button
+							key={img.url}
+							onClick={() => goFullScreen(index)}
+							style={{
+								backgroundImage: `url(${img.url})`,
+								backgroundSize: 'cover',
+							}}
+							layoutId={img.url}
+						/>
+					}
+				}
 				)}
 			</div>
 		</div>
