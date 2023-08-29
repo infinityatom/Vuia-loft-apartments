@@ -1,0 +1,18 @@
+{
+	"name": "Vuia Loft Apartments",
+	"lang": "ro",
+	"short_name": "Vuia",
+	"start_url": "./index.html",
+	"display": "standalone",
+	"background_color": "#ffffff",
+	"theme_color": "#FFD700",
+	"orientation": "portrait",
+	"description": "Descoperă viitorul vieții urbane pe site-ul nostru, oferind apartamente exclusive în construcție într-o locație vibrantă și foarte căutată.",
+	"icons": [
+		{
+			"src": "/favicon-128x128.svg",
+			"type": "image/svg",
+			"sizes": "128x128"
+		}
+	]
+}
