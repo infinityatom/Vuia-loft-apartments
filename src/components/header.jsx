@@ -42,8 +42,6 @@ export default function Header() {
 			<motion.img
 				className={style.imgBG}
 				src="./renders/BK6.png"
-				// style={{
-				// }}
 			/>
 			<motion.div
 				className={style.Logo}
