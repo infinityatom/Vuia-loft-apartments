@@ -220,8 +220,8 @@ function Card({ exitCard }) {
 				{/* <span>Lorem ipsum dolor sit amet consectetur adipisicing elit. Distinctio autem eos, sint nam exercitationem dolor et inventore suscipit accusamus, quae modi recusandae excepturi ipsam at.</span> */}
 				{/* <span>Locatia este in apropiere de tot</span> */}
 			</p>
-			<p><DirectionsBusIcon className={styles.Icon} /><span>385 Noah Place Suite 878 - 1 min</span></p>
-			<p><SchoolIcon className={styles.Icon} /><span>Scoala de langa - 1 min</span></p>
+			<p><DirectionsBusIcon className={styles.Icon} /><span>Centru Suceava - 5 min</span></p>
+			<p><SchoolIcon className={styles.Icon} /><span>Technical College Petru Muşat</span></p>
 			<p><ShoppingCartOutlinedIcon className={styles.Icon} /><span>Iulius mall - 5 min</span></p>
 		</motion.div>
 	);

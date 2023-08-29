@@ -11,13 +11,13 @@ import Spline from '@splinetool/react-spline';
 
 const SplineObjects = [
 	'/spline/ap_1_e_12_e_26_e_38_e_50.spline',
-	'/spline/ap_2_a_e_27_e_39.spline',
 	'/spline/ap_2_e_1.spline',
-	'/spline/ap_3_a_e_28_e_40.spline',
+	'/spline/ap_2_a_e_27_e_39.spline',
 	'/spline/ap_3_e_2.spline',
+	'/spline/ap_3_a_e_28_e_40.spline',
+	'/spline/ap_4_e_9.spline',
 	'/spline/ap_4_a_e_23_e_35.spline',
 	'/spline/ap_4_b_e_47.spline',
-	'/spline/ap_4_e_9.spline',
 	'/spline/ap_5_e_10_e_24_e_36_e_48.spline',
 ];
 
