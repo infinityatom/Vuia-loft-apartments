@@ -14,7 +14,8 @@ function groupBy(list, keyGetter) {
 
 export const ImageCategory = {
 	Randari: 'Randari',
-	PDF: 'pdfuri',
+	PDF: 'Suprafete',
+	Poze: 'Poze',
 }
 
 export const LoopGallery = {
@@ -24,9 +25,10 @@ export const LoopGallery = {
 }
 
 export class GalleryImage {
-	constructor(url, category) {
+	constructor(url, category, pdf = null) {
 		this.url = url;
 		this.category = category;
+		this.pdf = pdf;
 	}
 }
 

@@ -6,7 +6,15 @@ const testImages = [
 	new GalleryImage('./renders/building-5.jpg', ImageCategory.Randari),
 	new GalleryImage('./renders/building-6.jpg', ImageCategory.Randari),
 	new GalleryImage('./renders/building-7.jpg', ImageCategory.Randari),
-	// new GalleryImage('./suprafete/DEMISOL.pdf', ImageCategory.PDF),
+
+	new GalleryImage('./images/picture1.jpg', ImageCategory.Poze),
+
+	new GalleryImage('./suprafete/DEMISOL.jpg', ImageCategory.PDF, './suprafete/DEMISOL.pdf'),
+	new GalleryImage('./suprafete/PARTER.jpg', ImageCategory.PDF, './suprafete/PARTER.pdf'),
+	new GalleryImage('./suprafete/ETAJ-1.jpg', ImageCategory.PDF, './suprafete/ETAJ-1.pdf'),
+	new GalleryImage('./suprafete/ETAJ-2.jpg', ImageCategory.PDF, './suprafete/ETAJ-2.pdf'),
+	new GalleryImage('./suprafete/ETAJ-3.jpg', ImageCategory.PDF, './suprafete/ETAJ-3.pdf'),
+	new GalleryImage('./suprafete/ETAJ-4.jpg', ImageCategory.PDF, './suprafete/ETAJ-4.pdf'),
 ];
 
 import { useEffect, useState } from 'react';
@@ -151,28 +159,31 @@ function Grid({ images, categories, changeCategory, currentCategory, goFullScree
 							onClick={() => goFullScreen(index)}
 							style={{
 								backgroundSize: 'cover',
+								padding: 0,
 							}}
 							layoutId={img.url}
 						>
 							<embed
-								key={img.url}
-								src="http://example.com/the.pdf"
-								width="100px"
+								src={img.url}
+								width="100%"
 								height="100%"
+								style={{
+									pointerEvents: "none",
+								}}
 								type="application/pdf"
 							/>
 						</motion.button>
-					} else {
-						return <motion.button
-							key={img.url}
-							onClick={() => goFullScreen(index)}
-							style={{
-								backgroundImage: `url(${img.url})`,
-								backgroundSize: 'cover',
-							}}
-							layoutId={img.url}
-						/>
 					}
+
+					return <motion.button
+						key={img.url}
+						onClick={() => goFullScreen(index)}
+						style={{
+							backgroundImage: `url(${img.url})`,
+							backgroundSize: 'cover',
+						}}
+						layoutId={img.url}
+					/>
 				}
 				)}
 			</div>

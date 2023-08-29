@@ -116,12 +116,27 @@ export default function FullScreenGallery({ images, categories, changeCategory, 
 							}
 						}}
 					>
+
 						<div className="swiper-zoom-container">
-							<motion.img
-								src={img.url}
-								alt=""
-								layoutId={img.url}
-							/>
+							{
+								img.pdf ?
+									<motion.img
+										src={img.url}
+										alt=""
+										layoutId={img.url}
+										onClick={event => {
+											event.preventDefault();
+											window.open(img.pdf);
+											return true;
+										}}
+									/>
+									:
+									<motion.img
+										src={img.url}
+										alt=""
+										layoutId={img.url}
+									/>
+							}
 						</div>
 					</swiper-slide>
 				)}

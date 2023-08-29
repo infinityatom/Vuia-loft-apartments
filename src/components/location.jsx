@@ -217,7 +217,7 @@ function Card({ exitCard }) {
 			</button>
 			<p><PlaceIcon className={styles.Icon} /><span><a href="https://goo.gl/maps/cofCHmEKPw84YJfN6">loc. Suceava, Strada Traian Vuia</a></span></p>
 			<p>
-				<span>Lorem ipsum dolor sit amet consectetur adipisicing elit. Distinctio autem eos, sint nam exercitationem dolor et inventore suscipit accusamus, quae modi recusandae excepturi ipsam at.</span>
+				{/* <span>Lorem ipsum dolor sit amet consectetur adipisicing elit. Distinctio autem eos, sint nam exercitationem dolor et inventore suscipit accusamus, quae modi recusandae excepturi ipsam at.</span> */}
 				{/* <span>Locatia este in apropiere de tot</span> */}
 			</p>
 			<p><DirectionsBusIcon className={styles.Icon} /><span>385 Noah Place Suite 878 - 1 min</span></p>
