@@ -2,7 +2,7 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { StrictMode } from 'react';
 
 import Index from './pages/index';
-import Not_found from './http-response-status-pages/not_found';
+import Not_found from './pages/not_found.jsx';
 
 function App() {
 	return (
