@@ -41,11 +41,13 @@ export default function Header() {
 			{/* <LazyHashedImage src='https://upload.wikimedia.org/wikipedia/commons/3/3f/Fronalpstock_big.jpg' hash={hash} /> */}
 			<motion.img
 				className={style.imgBG}
-				src="./renders/BK6.png"
+				src="./renders/BK6.webp"
+				alt='Vuia loft apartments render without the building'
 			/>
 			<motion.div
 				className={style.Logo}
 				style={{ y: logoY }}
+				title='Logo of the building Vuia Loft Apartments'
 			>
 				<RiveComponent
 					// src={riveSrc}
@@ -56,7 +58,8 @@ export default function Header() {
 			</motion.div>
 			<motion.img
 				className={style.imgBuilding}
-				src={'./renders/building-6.png'}
+				src={'./renders/foreground-6.webp'}
+				alt='The Vuia Loft Apartments building cropped'
 				style={{
 					x: '-50%',
 					y: buildingY,

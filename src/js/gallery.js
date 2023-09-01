@@ -25,10 +25,11 @@ export const LoopGallery = {
 }
 
 export class GalleryImage {
-	constructor(url, category, pdf = null) {
+	constructor(url, category, pdf = null, alt) {
 		this.url = url;
 		this.category = category;
 		this.pdf = pdf;
+		this.alt = alt;
 	}
 }
 

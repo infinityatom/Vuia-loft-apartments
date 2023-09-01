@@ -75,11 +75,14 @@ export default function Apartments() {
 							<Dialog.Root>
 
 								<Dialog.Trigger className={styles.DialogTrigger}>
-									<img src={apartment.img} />
+									<img
+										src={apartment.img}
+										alt={apartment.tip_apartament}
+										/>
 									<h4>{apartment.suprafata_utila} mp</h4>
 								</Dialog.Trigger>
 
-								<DialogPortal apartment={apartment} index={index} />
+								<DialogPortal apartment={apartment} index={index}/>
 
 							</Dialog.Root>
 						</swiper-slide>
@@ -96,7 +99,7 @@ function DialogPortal({ apartment, index }) {
 		<Dialog.Portal>
 			<Dialog.Overlay className={styles.DialogOverlay} />
 			<Dialog.Content className={styles.DialogContent}>
-				<DialogContentSwiper img={apartment.img} splineURL={SplineObjects[index]} apartment={apartment} />
+				<DialogContentSwiper img={apartment.img} alt={apartment.tip_apartament} splineURL={SplineObjects[index]} apartment={apartment} />
 			</Dialog.Content>
 		</Dialog.Portal >
 	)
@@ -104,7 +107,7 @@ function DialogPortal({ apartment, index }) {
 
 import ThreeDRotationIcon from '@mui/icons-material/ThreeDRotation';
 
-function DialogContentSwiper({ img, splineURL, apartment }) {
+function DialogContentSwiper({ img, splineURL, apartment, alt }) {
 	return (
 		<>
 			<Dialog.Close style={{
@@ -125,7 +128,7 @@ function DialogContentSwiper({ img, splineURL, apartment }) {
 
 			<swiper-container slides-per-view='1' mousewheel-force-to-axis='true' pagination keyboard navigation>
 				<swiper-slide>
-					<img src={img} />
+					<img src={img} alt={alt}/>
 				</swiper-slide>
 				<swiper-slide>
 					<div style={{

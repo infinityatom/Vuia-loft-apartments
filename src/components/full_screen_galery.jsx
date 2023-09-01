@@ -123,7 +123,7 @@ export default function FullScreenGallery({ images, categories, changeCategory, 
 								img.pdf ?
 									<motion.img
 										src={img.url}
-										alt=""
+										alt={img.alt}
 										layoutId={img.url}
 										onClick={event => {
 											event.preventDefault();
@@ -134,7 +134,7 @@ export default function FullScreenGallery({ images, categories, changeCategory, 
 									:
 									<motion.img
 										src={img.url}
-										alt=""
+										alt={img.alt}
 										layoutId={img.url}
 									/>
 							}
@@ -151,10 +151,11 @@ export default function FullScreenGallery({ images, categories, changeCategory, 
 			>
 				{images.map((img) =>
 					<swiper-slide key={img.url}>
-						<img src={img.url} alt=""
+						<img src={img.url}
 							data-swiper-parallax-scale="0.8"
 							data-swiper-parallax-duration="600"
 							data-swiper-parallax="-15"
+							alt={img.alt}
 						/>
 					</swiper-slide>
 				)}

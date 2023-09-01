@@ -1,21 +1,21 @@
 const testImages = [
-	new GalleryImage('./renders/building-1.jpg', ImageCategory.Randari, null, 'Rendered image of the Vuia Loft Apartment number 1'),
-	new GalleryImage('./renders/building-2.jpg', ImageCategory.Randari, null, 'Rendered image of the Vuia Loft Apartment number 2'),
-	new GalleryImage('./renders/building-3.jpg', ImageCategory.Randari, null, 'Rendered image of the Vuia Loft Apartment number 3'),
-	new GalleryImage('./renders/building-4.jpg', ImageCategory.Randari, null, 'Rendered image of the Vuia Loft Apartment number 4'),
-	new GalleryImage('./renders/building-5.jpg', ImageCategory.Randari, null, 'Rendered image of the Vuia Loft Apartment number 5'),
-	new GalleryImage('./renders/building-6.jpg', ImageCategory.Randari, null, 'Rendered image of the Vuia Loft Apartment number 6'),
-	new GalleryImage('./renders/building-7.jpg', ImageCategory.Randari, null, 'Rendered image of the Vuia Loft Apartment number 7'),
-	new GalleryImage('./renders/building-8.jpeg', ImageCategory.Randari, null, 'Rendered image of the Vuia Loft Apartment number 8'),
+	new GalleryImage('./renders/building-1.webp', ImageCategory.Randari, null, 'Rendered image of the Vuia Loft Apartment number 1'),
+	new GalleryImage('./renders/building-2.webp', ImageCategory.Randari, null, 'Rendered image of the Vuia Loft Apartment number 2'),
+	new GalleryImage('./renders/building-3.webp', ImageCategory.Randari, null, 'Rendered image of the Vuia Loft Apartment number 3'),
+	new GalleryImage('./renders/building-4.webp', ImageCategory.Randari, null, 'Rendered image of the Vuia Loft Apartment number 4'),
+	new GalleryImage('./renders/building-5.webp', ImageCategory.Randari, null, 'Rendered image of the Vuia Loft Apartment number 5'),
+	new GalleryImage('./renders/building-6.webp', ImageCategory.Randari, null, 'Rendered image of the Vuia Loft Apartment number 6'),
+	new GalleryImage('./renders/building-7.webp', ImageCategory.Randari, null, 'Rendered image of the Vuia Loft Apartment number 7'),
+	new GalleryImage('./renders/building-8.webp', ImageCategory.Randari, null, 'Rendered image of the Vuia Loft Apartment number 8'),
 
-	new GalleryImage('./images/picture1.jpg', ImageCategory.Poze, null, 'A picture with the front of Vuia Loft Apartment\'s building'),
+	new GalleryImage('./pictures/picture1.jpg', ImageCategory.Poze, null, 'A picture with the front of Vuia Loft Apartment\'s building'),
 
-	new GalleryImage('./suprafete/PARTER.jpg', ImageCategory.PDF, './suprafete/PARTER.pdf', 'Blueprint of the ground floor of Vuia Loft Apartment'),
-	new GalleryImage('./suprafete/ETAJ-1.jpg', ImageCategory.PDF, './suprafete/ETAJ-1.pdf', 'Blueprint of the first floor of Vuia Loft Apartment'),
-	new GalleryImage('./suprafete/ETAJ-2.jpg', ImageCategory.PDF, './suprafete/ETAJ-2.pdf', 'Blueprint of the second floor of Vuia Loft Apartment'),
-	new GalleryImage('./suprafete/ETAJ-3.jpg', ImageCategory.PDF, './suprafete/ETAJ-3.pdf', 'Blueprint of the third floor of Vuia Loft Apartment'),
-	new GalleryImage('./suprafete/ETAJ-4.jpg', ImageCategory.PDF, './suprafete/ETAJ-4.pdf', 'Blueprint of the fourth floor of Vuia Loft Apartment'),
-	new GalleryImage('./suprafete/DEMISOL.jpg', ImageCategory.PDF, './suprafete/DEMISOL.pdf', 'Blueprint of the basement floor of Vuia Loft Apartment'),
+	new GalleryImage('./suprafete/PARTER.webp', ImageCategory.PDF, './suprafete/PARTER.pdf', 'Blueprint of the ground floor of Vuia Loft Apartment'),
+	new GalleryImage('./suprafete/ETAJ-1.webp', ImageCategory.PDF, './suprafete/ETAJ-1.pdf', 'Blueprint of the first floor of Vuia Loft Apartment'),
+	new GalleryImage('./suprafete/ETAJ-2.webp', ImageCategory.PDF, './suprafete/ETAJ-2.pdf', 'Blueprint of the second floor of Vuia Loft Apartment'),
+	new GalleryImage('./suprafete/ETAJ-3.webp', ImageCategory.PDF, './suprafete/ETAJ-3.pdf', 'Blueprint of the third floor of Vuia Loft Apartment'),
+	new GalleryImage('./suprafete/ETAJ-4.webp', ImageCategory.PDF, './suprafete/ETAJ-4.pdf', 'Blueprint of the fourth floor of Vuia Loft Apartment'),
+	new GalleryImage('./suprafete/DEMISOL.webp', ImageCategory.PDF, './suprafete/DEMISOL.pdf', 'Blueprint of the basement floor of Vuia Loft Apartment'),
 ];
 
 import { useEffect, useState } from 'react';
@@ -109,6 +109,7 @@ function Slider({ images, goFullScreen, changeCategory }) {
 							onClick={() => !dragged.current && goFullScreen(index)}
 						>
 							<img
+								alt={img.alt}
 								src={img.url}
 								draggable='false'
 							/>
@@ -157,6 +158,7 @@ function Grid({ images, categories, changeCategory, currentCategory, goFullScree
 					return <motion.button
 						key={img.url}
 						onClick={() => goFullScreen(index)}
+						title={img.alt}
 						style={{
 							backgroundImage: `url(${img.url})`,
 							backgroundSize: 'cover',

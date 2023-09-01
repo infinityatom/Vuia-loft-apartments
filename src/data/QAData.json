@@ -28,8 +28,8 @@
 				"answer": "Achiziționarea apartamentelor se poate face, în funcție de nevoile tale, prin :Plată cash. Prin cash se înțelege, evident, transfer bancar, toate tranzacțiile noastre fiind 100% fiscalizate:Finanțare directă de la dezvoltator"
 			},
 			{
-				"question": "Se poate vinde și în rate? Dacă da, pe cați ani?",
-				"answer": "Da, poți achita apartamentul și în rate, pe maxim 4 ani"
+				"question": "Se poate vinde și în rate?",
+				"answer": "Dezvoltatorul nu accepta plata in rate"
 			}
 		]
 	},

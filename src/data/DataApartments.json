@@ -9,7 +9,7 @@
 		],
 		"suprafata_utila": 38.5,
 		"suprafata_construita": 45.3,
-		"img": "/png/ap1.png",
+		"img": "/png/ap1.webp",
 		"suprafete": [
 			{
 				"name": "living",
@@ -44,7 +44,7 @@
 		],
 		"suprafata_utila": 44.20,
 		"suprafata_construita": 52.50,
-		"img": "/png/ap2.png",
+		"img": "/png/ap2.webp",
 		"suprafete": [
 			{
 				"name": "living",
@@ -80,7 +80,7 @@
 		],
 		"suprafata_utila": 44.3,
 		"suprafata_construita": 52.5,
-		"img": "/png/ap3.png",
+		"img": "/png/ap3.webp",
 		"suprafete": [
 			{
 				"name": "living",
@@ -115,7 +115,7 @@
 		],
 		"suprafata_utila": 51.9,
 		"suprafata_construita": 62.8,
-		"img": "/png/ap4.png",
+		"img": "/png/ap4.webp",
 		"suprafete": [
 			{
 				"name": "living",
@@ -159,7 +159,7 @@
 		],
 		"suprafata_utila": 51.9,
 		"suprafata_construita": 62.8,
-		"img": "/png/ap5.png",
+		"img": "/png/ap5.webp",
 		"suprafete": [
 			{
 				"name": "living",
@@ -202,7 +202,7 @@
 		],
 		"suprafata_utila": 48.6,
 		"suprafata_construita": 55.1,
-		"img": "/png/ap6.png",
+		"img": "/png/ap6.webp",
 		"suprafete": [
 			{
 				"name": "living",
@@ -238,7 +238,7 @@
 		],
 		"suprafata_utila": 51.2,
 		"suprafata_construita": 57.8,
-		"img": "/png/ap7.png",
+		"img": "/png/ap7.webp",
 		"suprafete": [
 			{
 				"name": "living",
@@ -273,7 +273,7 @@
 		],
 		"suprafata_utila": 51.6,
 		"suprafata_construita": 58.6,
-		"img": "/png/ap8.png",
+		"img": "/png/ap8.webp",
 		"suprafete": [
 			{
 				"name": "living",
@@ -311,7 +311,7 @@
 		],
 		"suprafata_utila": 57.3,
 		"suprafata_construita": 66.4,
-		"img": "/png/ap9.png",
+		"img": "/png/ap9.webp",
 		"suprafete": [
 			{
 				"name": "living",
